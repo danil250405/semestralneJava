@@ -2,10 +2,11 @@
 
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -45,16 +46,19 @@
             </TextField>
             <Group layoutX="79.0" layoutY="144.0" />
             <Group layoutX="68.0" layoutY="143.0" />
-            <CheckBox fx:id="signUpCheckBoxMale" layoutX="193.0" layoutY="136.0" mnemonicParsing="false" text="Male">
+            <RadioButton fx:id="signUpRadioBtnMale" layoutX="194.0" layoutY="143.0" mnemonicParsing="false" text="Male">
+               <toggleGroup>
+                  <ToggleGroup fx:id="gender" />
+               </toggleGroup>
                <font>
                   <Font size="15.0" />
                </font>
-            </CheckBox>
-            <CheckBox fx:id="signUpCheckBoxFemale" layoutX="445.0" layoutY="136.0" mnemonicParsing="false" text="Female">
+            </RadioButton>
+            <RadioButton fx:id="signUpRadioBtnFemale" layoutX="445.0" layoutY="143.0" mnemonicParsing="false" text="Female" toggleGroup="$gender">
                <font>
                   <Font size="15.0" />
                </font>
-            </CheckBox>
+            </RadioButton>
             </children>
         </AnchorPane>
         <Label layoutX="194.0" layoutY="24.0" prefHeight="71.0" prefWidth="345.0" text="LibraryNewGen" textAlignment="CENTER" textFill="WHITE">

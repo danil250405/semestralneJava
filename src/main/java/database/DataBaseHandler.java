@@ -1,4 +1,6 @@
 package database;
+import com.example.semestralnejava.User;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -15,8 +17,7 @@ public class DataBaseHandler extends Configs {
         dbConnection = DriverManager.getConnection(conectionString,dbUser,dbPass);
         return dbConnection;
     }
-    public void signUpUser(String firstname, String lastName, String username,
-                            String password, String email, String gender){
+    public void signUpUser(User user){
         String insert = "INSERT INTO " + Const.USER_TABLE + "(" +
                 Const.USERS_FIRSTNAME + "," + Const.USERS_LASTNAME + "," +
                 Const.USERS_USERNAME + "," + Const.USERS_PASSWORD + "," +
@@ -29,12 +30,12 @@ public class DataBaseHandler extends Configs {
             throw new RuntimeException(e);
         }
         try {
-            prSt.setString(1,firstname);
-            prSt.setString(2,lastName);
-            prSt.setString(3,username);
-            prSt.setString(4,password);
-            prSt.setString(5,email);
-            prSt.setString(6,gender);
+            prSt.setString(1,user.getFirstName());
+            prSt.setString(2,user.getLastName());
+            prSt.setString(3,user.getUsername());
+            prSt.setString(4,user.getPassword());
+            prSt.setString(5,user.getEmail());
+            prSt.setString(6,user.getGender());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
