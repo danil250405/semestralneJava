@@ -1,4 +1,4 @@
-package com.example.semestralnejava;
+package com.example.semestralnejava.Controllers;
 
 import java.io.IOException;
 import java.net.URL;
@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+import AllClasses.User;
 import database.DataBaseHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

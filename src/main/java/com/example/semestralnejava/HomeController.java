@@ -1,4 +1,4 @@
-package com.example.semestralnejava;
+package com.example.semestralnejava.Controllers;
 
 import java.net.URL;
 import java.util.ResourceBundle;
