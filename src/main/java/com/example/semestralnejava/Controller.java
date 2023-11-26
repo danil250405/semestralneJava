@@ -1,21 +1,17 @@
-package com.example.semestralnejava.Controllers;
+package com.example.semestralnejava;
 
-import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import AllClasses.User;
+import animations.Shake;
 import database.DataBaseHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class Controller {
 
@@ -41,10 +37,8 @@ public class Controller {
     void initialize() {
         //button for log in
         loginSignUpButton.setOnAction(event->{
-            loginSignUpButton.getScene().getWindow().hide();
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("signUp.fxml"));
-            tryCatchLoadNewWindow(loader);
+            WindowManager.showWindow("signUp.fxml" , loginSignUpButton);
+
 
         });
 
@@ -81,24 +75,18 @@ public class Controller {
         }
         if(counter >=1){
             System.out.println("Successful");
-            authSignInButton.getScene().getWindow().hide();
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("app.fxml"));
-            tryCatchLoadNewWindow(loader);
+            WindowManager.showWindow("app.fxml", authSignInButton);
+
+        }
+        else {
+            Shake userLoginAnim = new Shake(loginField);
+            Shake passAnim = new Shake(passwordField);
+            passAnim.playAnim();
+            userLoginAnim.playAnim();
         }
     }
 
-    private void tryCatchLoadNewWindow(FXMLLoader loader) {
-        try {
-            loader.load();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        Parent root = loader.getRoot();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
-    }
+
 
 }
 

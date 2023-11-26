@@ -1,4 +1,4 @@
-package com.example.semestralnejava;
+package AllClasses;
 
 public class User {
     private String firstName;

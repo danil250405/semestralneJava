@@ -1,5 +1,5 @@
 package database;
-import com.example.semestralnejava.User;
+import AllClasses.User;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -58,5 +58,22 @@ public class DataBaseHandler extends Configs {
             e.printStackTrace();
         }
     return resSet;
+    }
+
+    public ResultSet getUsername(User user){
+        ResultSet resSet = null;
+        String select = "SELECT * FROM " + Const.USER_TABLE + " WHERE " +
+                Const.USERS_USERNAME + "=?";
+
+
+        try {
+            PreparedStatement prSt = getDbConnection().prepareStatement(select);
+            prSt.setString(1,user.getUsername());
+            resSet = prSt.executeQuery();
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return resSet;
     }
 }

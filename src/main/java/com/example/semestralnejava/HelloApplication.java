@@ -1,4 +1,4 @@
-package Classes;
+package com.example.semestralnejava;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

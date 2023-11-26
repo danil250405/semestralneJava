@@ -9,4 +9,6 @@ module com.example.semestralnejava {
     exports com.example.semestralnejava;
     exports database;
     opens database to javafx.fxml;
+    exports AllClasses;
+    opens AllClasses to javafx.fxml;
 }

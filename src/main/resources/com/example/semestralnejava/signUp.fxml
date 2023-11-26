@@ -59,6 +59,7 @@
                   <Font size="15.0" />
                </font>
             </RadioButton>
+            <Label fx:id="usernameIsUsedTextField" layoutX="265.0" layoutY="40.0" prefHeight="21.0" prefWidth="145.0" textFill="RED" />
             </children>
         </AnchorPane>
         <Label layoutX="194.0" layoutY="24.0" prefHeight="71.0" prefWidth="345.0" text="LibraryNewGen" textAlignment="CENTER" textFill="WHITE">
