@@ -2,7 +2,11 @@ package com.example.semestralnejava;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import database.DataBaseHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -54,17 +58,33 @@ public class Controller {
           else System.out.println("Login or Pass is Empty");
 
 
-          authSignInButton.getScene().getWindow().hide();
-          FXMLLoader loader = new FXMLLoader();
-          loader.setLocation(getClass().getResource("app.fxml"));
-          tryCatchLoadNewWindow(loader);
+
       });
 
     }
 
     private void loginUser(String loginText, String loginPassword) {
-
-
+        DataBaseHandler dataBaseHandler = new DataBaseHandler();
+        User user = new User();
+        user.setUsername(loginText);
+        user.setPassword(loginPassword);
+        ResultSet result = dataBaseHandler.getUser(user);
+        int counter = 0;
+        while (true){
+            try {
+                if (!result.next()) break;
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+            counter++;
+        }
+        if(counter >=1){
+            System.out.println("Successful");
+            authSignInButton.getScene().getWindow().hide();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("app.fxml"));
+            tryCatchLoadNewWindow(loader);
+        }
     }
 
     private void tryCatchLoadNewWindow(FXMLLoader loader) {
