@@ -1,0 +1,222 @@
+Index: src/main/resources/com/example/semestralnejava/app.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"400.0\" prefWidth=\"700.0\" style=\"-fx-background-color: #2E3348;\" xmlns=\"http://javafx.com/javafx/21\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"com.example.semestralnejava.HomeController\">\r\n    <children>\r\n        <AnchorPane layoutX=\"-3.0\" layoutY=\"108.0\" prefHeight=\"303.0\" prefWidth=\"707.0\" style=\"-fx-background-color: #fafafa;\">\r\n         <children>\r\n            <Label layoutX=\"133.0\" layoutY=\"8.0\" prefHeight=\"77.0\" prefWidth=\"442.0\" text=\"Welcome to our library\" textAlignment=\"CENTER\" textFill=\"#807a7a\">\r\n               <font>\r\n                  <Font name=\"Monotype Corsiva\" size=\"53.0\" />\r\n               </font>\r\n            </Label>\r\n            <ImageView fx:id=\"imageButtonHome\" fitHeight=\"71.0\" fitWidth=\"71.0\" layoutX=\"14.0\" layoutY=\"11.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n               <image>\r\n                  <Image url=\"@../../../../java/assets/home_icon.png\" />\r\n               </image>\r\n            </ImageView>\r\n         </children>\r\n        </AnchorPane>\r\n        <Label layoutX=\"194.0\" layoutY=\"24.0\" prefHeight=\"71.0\" prefWidth=\"345.0\" text=\"LibraryNewGen\" textAlignment=\"CENTER\" textFill=\"WHITE\">\r\n            <font>\r\n                <Font name=\"Monotype Corsiva\" size=\"53.0\" />\r\n            </font>\r\n        </Label>\r\n    </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/com/example/semestralnejava/app.fxml b/src/main/resources/com/example/semestralnejava/app.fxml
+--- a/src/main/resources/com/example/semestralnejava/app.fxml	(revision b4a629bb5ecc7464b6bf4aa33473942ed2eaafdb)
++++ b/src/main/resources/com/example/semestralnejava/app.fxml	(date 1701126720457)
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
++<?import javafx.scene.control.Button?>
+ <?import javafx.scene.control.Label?>
+ <?import javafx.scene.image.Image?>
+ <?import javafx.scene.image.ImageView?>
+@@ -8,24 +9,32 @@
+ 
+ <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralnejava.HomeController">
+     <children>
+-        <AnchorPane layoutX="-3.0" layoutY="108.0" prefHeight="303.0" prefWidth="707.0" style="-fx-background-color: #fafafa;">
++        <AnchorPane layoutX="-4.0" layoutY="108.0" prefHeight="303.0" prefWidth="707.0" style="-fx-background-color: #fafafa;">
+          <children>
+-            <Label layoutX="133.0" layoutY="8.0" prefHeight="77.0" prefWidth="442.0" text="Welcome to our library" textAlignment="CENTER" textFill="#807a7a">
++            <Button fx:id="showAllbokBtn" layoutX="240.0" layoutY="28.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="202.0" style="-fx-background-color: #F39C63;" text="show all books" textFill="WHITE">
++               <font>
++                  <Font name="Monotype Corsiva" size="23.0" />
++               </font>
++            </Button>
++            <Button fx:id="addNewBookBtn" layoutX="240.0" layoutY="172.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="202.0" style="-fx-background-color: #F39C63;" text="add new book" textFill="WHITE">
++               <font>
++                  <Font name="Monotype Corsiva" size="23.0" />
++               </font>
++            </Button>
++            <Button fx:id="deleteBookBtn" layoutX="240.0" layoutY="101.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="202.0" style="-fx-background-color: #F39C63;" text="delete book" textFill="WHITE">
+                <font>
+-                  <Font name="Monotype Corsiva" size="53.0" />
++                  <Font name="Monotype Corsiva" size="23.0" />
+                </font>
+-            </Label>
+-            <ImageView fx:id="imageButtonHome" fitHeight="71.0" fitWidth="71.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+-               <image>
+-                  <Image url="@../../../../java/assets/home_icon.png" />
+-               </image>
+-            </ImageView>
++            </Button>
+          </children>
+         </AnchorPane>
+-        <Label layoutX="194.0" layoutY="24.0" prefHeight="71.0" prefWidth="345.0" text="LibraryNewGen" textAlignment="CENTER" textFill="WHITE">
+-            <font>
+-                <Font name="Monotype Corsiva" size="53.0" />
+-            </font>
+-        </Label>
++      <Label layoutX="177.0" layoutY="36.0" prefHeight="71.0" prefWidth="345.0" text="LibraryNewGen" textAlignment="CENTER" textFill="WHITE">
++         <font>
++            <Font name="Segoe Script" size="39.0" />
++         </font>
++      </Label>
++        <ImageView fx:id="imageButtonHome" fitHeight="71.0" fitWidth="71.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
++            <Image url="@home_icon.png" />
++        </ImageView>
+     </children>
+ </AnchorPane>
+Index: src/main/java/database/Configs.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package database;\r\n\r\npublic class Configs {\r\n    protected String dbHost = \"localhost\",\r\n                     dbPort = \"3306\",\r\n                     dbUser = \"root\",\r\n                     dbPass = \"root\",\r\n                     dbName = \"newgen\";\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/database/Configs.java b/src/main/java/database/Configs.java
+--- a/src/main/java/database/Configs.java	(revision b4a629bb5ecc7464b6bf4aa33473942ed2eaafdb)
++++ b/src/main/java/database/Configs.java	(date 1701124202155)
+@@ -4,6 +4,6 @@
+     protected String dbHost = "localhost",
+                      dbPort = "3306",
+                      dbUser = "root",
+-                     dbPass = "root",
++                     dbPass = "",
+                      dbName = "newgen";
+ }
+Index: src/main/resources/com/example/semestralnejava/hello-view.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.PasswordField?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"400.0\" prefWidth=\"700.0\" style=\"-fx-background-color: #2E3348;\" xmlns=\"http://javafx.com/javafx/21\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"com.example.semestralnejava.Controller\">\r\n   <children>\r\n      <AnchorPane layoutX=\"-3.0\" layoutY=\"108.0\" prefHeight=\"303.0\" prefWidth=\"707.0\" style=\"-fx-background-color: #fafafa;\">\r\n         <children>\r\n            <TextField fx:id=\"loginField\" layoutX=\"243.0\" layoutY=\"45.0\" prefHeight=\"25.0\" prefWidth=\"222.0\" promptText=\"username\" style=\"-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 10;\">\r\n               <font>\r\n                  <Font size=\"17.0\" />\r\n               </font>\r\n            </TextField>\r\n            <PasswordField fx:id=\"passwordField\" layoutX=\"244.0\" layoutY=\"102.0\" prefHeight=\"25.0\" prefWidth=\"222.0\" promptText=\"password\" style=\"-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 10;\">\r\n               <font>\r\n                  <Font size=\"17.0\" />\r\n               </font>\r\n            </PasswordField>\r\n            <Button fx:id=\"authSignInButton\" layoutX=\"285.0\" layoutY=\"171.0\" mnemonicParsing=\"false\" prefHeight=\"55.0\" prefWidth=\"137.0\" style=\"-fx-background-color: #F39C63;\" text=\"Sign In\" textFill=\"WHITE\">\r\n               <font>\r\n                  <Font name=\"Monotype Corsiva\" size=\"28.0\" />\r\n               </font>\r\n            </Button>\r\n         </children>\r\n      </AnchorPane>\r\n      <Label layoutX=\"194.0\" layoutY=\"24.0\" prefHeight=\"71.0\" prefWidth=\"345.0\" text=\"LibraryNewGen\" textAlignment=\"CENTER\" textFill=\"WHITE\">\r\n         <font>\r\n            <Font name=\"Monotype Corsiva\" size=\"53.0\" />\r\n         </font>\r\n      </Label>\r\n      <Button fx:id=\"loginSignUpButton\" layoutX=\"595.0\" layoutY=\"14.0\" mnemonicParsing=\"false\" prefHeight=\"37.0\" prefWidth=\"85.0\" style=\"-fx-background-color: #F39C63;\" text=\"Log In\" textFill=\"WHITE\">\r\n         <font>\r\n            <Font name=\"Monotype Corsiva\" size=\"20.0\" />\r\n         </font>\r\n      </Button>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/com/example/semestralnejava/hello-view.fxml b/src/main/resources/com/example/semestralnejava/hello-view.fxml
+--- a/src/main/resources/com/example/semestralnejava/hello-view.fxml	(revision b4a629bb5ecc7464b6bf4aa33473942ed2eaafdb)
++++ b/src/main/resources/com/example/semestralnejava/hello-view.fxml	(date 1701124621803)
+@@ -30,7 +30,7 @@
+       </AnchorPane>
+       <Label layoutX="194.0" layoutY="24.0" prefHeight="71.0" prefWidth="345.0" text="LibraryNewGen" textAlignment="CENTER" textFill="WHITE">
+          <font>
+-            <Font name="Monotype Corsiva" size="53.0" />
++            <Font name="Segoe Script" size="39.0" />
+          </font>
+       </Label>
+       <Button fx:id="loginSignUpButton" layoutX="595.0" layoutY="14.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="85.0" style="-fx-background-color: #F39C63;" text="Log In" textFill="WHITE">
+Index: src/main/resources/com/example/semestralnejava/signUp.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.Group?>\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.control.Label?>\r\n<?import javafx.scene.control.PasswordField?>\r\n<?import javafx.scene.control.RadioButton?>\r\n<?import javafx.scene.control.TextField?>\r\n<?import javafx.scene.control.ToggleGroup?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane maxHeight=\"-Infinity\" maxWidth=\"-Infinity\" minHeight=\"-Infinity\" minWidth=\"-Infinity\" prefHeight=\"400.0\" prefWidth=\"700.0\" style=\"-fx-background-color: #2E3348;\" xmlns=\"http://javafx.com/javafx/21\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"com.example.semestralnejava.SignUpController\">\r\n    <children>\r\n        <AnchorPane layoutX=\"-3.0\" layoutY=\"95.0\" prefHeight=\"303.0\" prefWidth=\"707.0\" style=\"-fx-background-color: #fafafa;\">\r\n            <children>\r\n                <TextField fx:id=\"signUpLastName\" layoutX=\"445.0\" layoutY=\"88.0\" prefHeight=\"25.0\" prefWidth=\"222.0\" promptText=\"last name\" style=\"-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 10;\">\r\n                    <font>\r\n                        <Font size=\"17.0\" />\r\n                    </font>\r\n                </TextField>\r\n                <PasswordField fx:id=\"signUpPassword\" layoutX=\"243.0\" layoutY=\"174.0\" prefHeight=\"25.0\" prefWidth=\"222.0\" promptText=\"password\" style=\"-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 10;\">\r\n                    <font>\r\n                        <Font size=\"17.0\" />\r\n                    </font>\r\n                </PasswordField>\r\n                <Button fx:id=\"signUpButton\" layoutX=\"284.0\" layoutY=\"234.0\" mnemonicParsing=\"false\" prefHeight=\"40.0\" prefWidth=\"139.0\" style=\"-fx-background-color: #F39C63;\" text=\"Sign Up\" textFill=\"WHITE\">\r\n                    <font>\r\n                        <Font name=\"Monotype Corsiva\" size=\"23.0\" />\r\n                    </font>\r\n                </Button>\r\n            <TextField fx:id=\"signUpName\" layoutX=\"445.0\" layoutY=\"30.0\" prefHeight=\"25.0\" prefWidth=\"222.0\" promptText=\"name\" style=\"-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 10;\">\r\n               <font>\r\n                  <Font size=\"17.0\" />\r\n               </font>\r\n            </TextField>\r\n            <TextField fx:id=\"signUpUserName\" layoutX=\"30.0\" layoutY=\"30.0\" prefHeight=\"25.0\" prefWidth=\"222.0\" promptText=\"username\" style=\"-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 10;\">\r\n               <font>\r\n                  <Font size=\"17.0\" />\r\n               </font>\r\n            </TextField>\r\n            <TextField fx:id=\"signUpEmail\" layoutX=\"32.0\" layoutY=\"88.0\" prefHeight=\"25.0\" prefWidth=\"222.0\" promptText=\"email\" style=\"-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 10;\">\r\n               <font>\r\n                  <Font size=\"17.0\" />\r\n               </font>\r\n            </TextField>\r\n            <Group layoutX=\"79.0\" layoutY=\"144.0\" />\r\n            <Group layoutX=\"68.0\" layoutY=\"143.0\" />\r\n            <RadioButton fx:id=\"signUpRadioBtnMale\" layoutX=\"194.0\" layoutY=\"143.0\" mnemonicParsing=\"false\" text=\"Male\">\r\n               <toggleGroup>\r\n                  <ToggleGroup fx:id=\"gender\" />\r\n               </toggleGroup>\r\n               <font>\r\n                  <Font size=\"15.0\" />\r\n               </font>\r\n            </RadioButton>\r\n            <RadioButton fx:id=\"signUpRadioBtnFemale\" layoutX=\"445.0\" layoutY=\"143.0\" mnemonicParsing=\"false\" text=\"Female\" toggleGroup=\"$gender\">\r\n               <font>\r\n                  <Font size=\"15.0\" />\r\n               </font>\r\n            </RadioButton>\r\n            </children>\r\n        </AnchorPane>\r\n        <Label layoutX=\"194.0\" layoutY=\"24.0\" prefHeight=\"71.0\" prefWidth=\"345.0\" text=\"LibraryNewGen\" textAlignment=\"CENTER\" textFill=\"WHITE\">\r\n            <font>\r\n                <Font name=\"Monotype Corsiva\" size=\"53.0\" />\r\n            </font>\r\n        </Label>\r\n    </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/com/example/semestralnejava/signUp.fxml b/src/main/resources/com/example/semestralnejava/signUp.fxml
+--- a/src/main/resources/com/example/semestralnejava/signUp.fxml	(revision b4a629bb5ecc7464b6bf4aa33473942ed2eaafdb)
++++ b/src/main/resources/com/example/semestralnejava/signUp.fxml	(date 1701124923953)
+@@ -61,10 +61,10 @@
+             </RadioButton>
+             </children>
+         </AnchorPane>
+-        <Label layoutX="194.0" layoutY="24.0" prefHeight="71.0" prefWidth="345.0" text="LibraryNewGen" textAlignment="CENTER" textFill="WHITE">
+-            <font>
+-                <Font name="Monotype Corsiva" size="53.0" />
+-            </font>
+-        </Label>
++      <Label layoutX="178.0" layoutY="23.0" prefHeight="71.0" prefWidth="345.0" text="LibraryNewGen" textAlignment="CENTER" textFill="WHITE">
++         <font>
++            <Font name="Segoe Script" size="39.0" />
++         </font>
++      </Label>
+     </children>
+ </AnchorPane>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"b8a5a3a1-911b-4f6a-8899-0dbb87064242\" name=\"Changes\" comment=\"semestralne zadanie\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/dbnavigator.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/dbnavigator.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/database/DataBaseHandler.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/database/DataBaseHandler.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 3\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2YaTMPWRmEUzoKMgyp2XqHjdZrg\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"WebServerToolWindowFactoryState\": \"false\",\r\n    \"git-widget-placeholder\": \"test\",\r\n    \"last_opened_file_path\": \"X:/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0.jar\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"project.structure.last.edited\": \"Libraries\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.3816092\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  },\r\n  \"keyToStringList\": {\r\n    \"DatabaseDriversLRU\": [\r\n      \"mysql\"\r\n    ]\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\danil\\OneDrive\\Рабочий стол\\studium\\javaProjects\\semestralneJava\\src\\main\\java\\assets\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.semestralnejava.HelloApplication\" />\r\n      <module name=\"semestralneJava\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.semestralnejava.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.HelloApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"b8a5a3a1-911b-4f6a-8899-0dbb87064242\" name=\"Changes\" comment=\"\" />\r\n      <created>1700762644304</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1700762644304</updated>\r\n      <workItem from=\"1700762645340\" duration=\"12368000\" />\r\n      <workItem from=\"1700841640740\" duration=\"682000\" />\r\n      <workItem from=\"1700926285399\" duration=\"904000\" />\r\n      <workItem from=\"1700927362475\" duration=\"1344000\" />\r\n      <workItem from=\"1701010635416\" duration=\"7911000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"semestralne zadanie\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701012694980</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701012694980</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"semestralne zadanie\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1701015338637</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1701015338637</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"RECENT_FILTERS\">\r\n      <map>\r\n        <entry key=\"User\">\r\n          <value>\r\n            <list>\r\n              <RecentGroup>\r\n                <option name=\"FILTER_VALUES\">\r\n                  <option value=\"*\" />\r\n                </option>\r\n              </RecentGroup>\r\n            </list>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"semestralne zadanie\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"semestralne zadanie\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision b4a629bb5ecc7464b6bf4aa33473942ed2eaafdb)
++++ b/.idea/workspace.xml	(date 1701126647602)
+@@ -5,8 +5,13 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="b8a5a3a1-911b-4f6a-8899-0dbb87064242" name="Changes" comment="semestralne zadanie">
+-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/database/DataBaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/DataBaseHandler.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/assets/home_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/home_icon.png" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/database/Configs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/Configs.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/app.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/hello-view.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/signUp.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -28,6 +33,13 @@
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="MavenImportPreferences">
++    <option name="generalSettings">
++      <MavenGeneralSettings>
++        <option name="mavenHome" value="Use Maven wrapper" />
++      </MavenGeneralSettings>
++    </option>
+   </component>
+   <component name="ProjectColorInfo">{
+   &quot;associatedIndex&quot;: 3
+@@ -45,7 +57,8 @@
+     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+     "WebServerToolWindowFactoryState": "false",
+     "git-widget-placeholder": "test",
+-    "last_opened_file_path": "X:/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0.jar",
++    "ignore.virus.scanning.warn.message": "true",
++    "last_opened_file_path": "C:/Users/danil/AppData/Local/SceneBuilder/SceneBuilder.exe",
+     "node.js.detected.package.eslint": "true",
+     "node.js.detected.package.tslint": "true",
+     "node.js.selected.package.eslint": "(autodetect)",
+@@ -65,6 +78,15 @@
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\Users\danil\OneDrive\Рабочий стол\studium\javaProjects\semestralneJava\src\main\java\assets" />
+     </key>
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\danil\Documents\GitHub\semestralneJava\src\main\resources\com\example\semestralnejava" />
++      <recent name="C:\Users\danil\Documents\GitHub\semestralneJava\src\main\java\com\example\semestralnejava" />
++      <recent name="C:\Users\danil\Documents\GitHub\semestralneJava\src\main\java\com\example\semestralnejava\assets" />
++    </key>
++    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
++      <recent name="" />
++      <recent name="com.example.semestralnejava" />
++    </key>
+   </component>
+   <component name="RunManager">
+     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+@@ -99,6 +121,8 @@
+       <workItem from="1700926285399" duration="904000" />
+       <workItem from="1700927362475" duration="1344000" />
+       <workItem from="1701010635416" duration="7911000" />
++      <workItem from="1701102768167" duration="1893000" />
++      <workItem from="1701123372410" duration="3274000" />
+     </task>
+     <task id="LOCAL-00001" summary="semestralne zadanie">
+       <option name="closed" value="true" />
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><project version=\"4\">\r\n  <component name=\"ExternalStorageConfigurationManager\" enabled=\"true\" />\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_20\" default=\"true\" project-jdk-name=\"20\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision b4a629bb5ecc7464b6bf4aa33473942ed2eaafdb)
++++ b/.idea/misc.xml	(date 1701123364407)
+@@ -7,7 +7,7 @@
+       </list>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_20" default="true" project-jdk-name="20" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="20" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -8,24 +9,32 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralnejava.HomeController">
     <children>
-        <AnchorPane layoutX="-3.0" layoutY="108.0" prefHeight="303.0" prefWidth="707.0" style="-fx-background-color: #fafafa;">
+        <AnchorPane layoutX="-4.0" layoutY="108.0" prefHeight="303.0" prefWidth="707.0" style="-fx-background-color: #fafafa;">
          <children>
-            <Label layoutX="133.0" layoutY="8.0" prefHeight="77.0" prefWidth="442.0" text="Welcome to our library" textAlignment="CENTER" textFill="#807a7a">
+            <Button fx:id="showAllbokBtn" layoutX="240.0" layoutY="28.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="202.0" style="-fx-background-color: #F39C63;" text="show all books" textFill="WHITE">
                <font>
-                  <Font name="Monotype Corsiva" size="53.0" />
+                  <Font name="Monotype Corsiva" size="23.0" />
                </font>
-            </Label>
-            <ImageView fx:id="imageButtonHome" fitHeight="71.0" fitWidth="71.0" layoutX="14.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../java/assets/home_icon.png" />
-               </image>
-            </ImageView>
+            </Button>
+            <Button fx:id="addNewBookBtn" layoutX="240.0" layoutY="172.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="202.0" style="-fx-background-color: #F39C63;" text="add new book" textFill="WHITE">
+               <font>
+                  <Font name="Monotype Corsiva" size="23.0" />
+               </font>
+            </Button>
+            <Button fx:id="deleteBookBtn" layoutX="240.0" layoutY="101.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="202.0" style="-fx-background-color: #F39C63;" text="delete book" textFill="WHITE">
+               <font>
+                  <Font name="Monotype Corsiva" size="23.0" />
+               </font>
+            </Button>
          </children>
         </AnchorPane>
-        <Label layoutX="194.0" layoutY="24.0" prefHeight="71.0" prefWidth="345.0" text="LibraryNewGen" textAlignment="CENTER" textFill="WHITE">
-            <font>
-                <Font name="Monotype Corsiva" size="53.0" />
-            </font>
-        </Label>
+      <Label layoutX="177.0" layoutY="36.0" prefHeight="71.0" prefWidth="345.0" text="LibraryNewGen" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Segoe Script" size="39.0" />
+         </font>
+      </Label>
+        <ImageView fx:id="imageButtonHome" fitHeight="71.0" fitWidth="71.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@home_icon.png" />
+        </ImageView>
     </children>
 </AnchorPane>
