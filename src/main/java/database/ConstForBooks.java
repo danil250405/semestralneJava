@@ -8,5 +8,6 @@ public class ConstForBooks {
     public static final String BOOK_AUTHOR = "bookAuthor";
     public static final String BOOK_YEAR = "bookYear";
     public static final String ID_USER = "iduser";
+    public static final String BOOK_LOCATION = "location";
 
 }

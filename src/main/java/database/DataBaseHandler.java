@@ -1,8 +1,6 @@
 package database;
 import AllClasses.Book;
 import AllClasses.User;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -47,22 +45,15 @@ public class DataBaseHandler extends Configs {
 
     }
     //take user from database and authorization him
-    public ResultSet getUser(User user){
+    public ResultSet getUser() throws SQLException, ClassNotFoundException {
         ResultSet resSet = null;
-        String select = "SELECT * FROM " + ConstForUsers.USER_TABLE + " WHERE " +
-                ConstForUsers.USERS_USERNAME + "=? AND " + ConstForUsers.USERS_PASSWORD + "=?";
+        String select = "SELECT * FROM users";
+        PreparedStatement prSt = null;
+        prSt =getDbConnection().prepareStatement(select);
+        resSet = prSt.executeQuery();
 
 
-        try {
-            PreparedStatement prSt = getDbConnection().prepareStatement(select);
-            prSt.setString(1,user.getUsername());
-            prSt.setString(2,user.getPassword());
-            resSet = prSt.executeQuery();
-
-        } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    return resSet;
+        return resSet;
     }
     // checking username is used or no
     public ResultSet getUsername(User user){
@@ -112,5 +103,31 @@ public class DataBaseHandler extends Configs {
 
 
         return resSet;
+    }
+    public void setNewUserIdForBook(int bookId, int newUserId, String newUsername) throws SQLException, ClassNotFoundException {
+        String updateQuery = "UPDATE " + ConstForBooks.BOOK_TABLE +
+                " SET " + ConstForBooks.ID_USER + " = ?, " +
+                ConstForBooks.BOOK_LOCATION + " =?" +
+                " WHERE " + ConstForBooks.BOOK_ID + " = ?";
+
+        try (Connection connection = getDbConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(updateQuery)) {
+
+            preparedStatement.setInt(1, newUserId);
+            preparedStatement.setString(2, newUsername);
+            preparedStatement.setInt(3, bookId);
+
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            if (rowsAffected > 0) {
+                System.out.println("Данные успешно обновлены");
+            } else {
+                System.out.println("Обновление данных не выполнено");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 }

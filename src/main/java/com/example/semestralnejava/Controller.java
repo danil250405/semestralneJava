@@ -32,9 +32,9 @@ public class Controller {
 
     @FXML
     private Button loginSignUpButton;
-
+    public static User authorizedUser = new User();
     @FXML
-    void initialize() {
+    void initialize() throws SQLException, ClassNotFoundException {
         //button for log in
         loginSignUpButton.setOnAction(event->{
             WindowManager.showWindow("signUp.fxml" , loginSignUpButton);
@@ -48,42 +48,56 @@ public class Controller {
           String loginPassword = passwordField.getText().trim();
 
           if (!loginText.isEmpty() && !loginPassword.isEmpty()){
-              loginUser(loginText, loginPassword);
+              try {
+                  authorizedUser = loginUser(loginText, loginPassword);
+              } catch (SQLException | ClassNotFoundException e) {
+                  throw new RuntimeException(e);
+              }
           }
           else System.out.println("Login or Pass is Empty");
 
 
 
       });
-
+       System.out.println(authorizedUser.getEmail());
     }
 
-    private void loginUser(String loginText, String loginPassword) {
+    private User loginUser(String loginText, String loginPassword) throws SQLException, ClassNotFoundException {
         DataBaseHandler dataBaseHandler = new DataBaseHandler();
-        User user = new User();
-        user.setUsername(loginText);
-        user.setPassword(loginPassword);
-        ResultSet result = dataBaseHandler.getUser(user);
+        User authorizedUser = new User();
+        authorizedUser.setUsername(loginText);
+        authorizedUser.setPassword(loginPassword);
+        ResultSet result = dataBaseHandler.getUser();
+
         int counter = 0;
-        while (true){
-            try {
-                if (!result.next()) break;
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-            counter++;
+        while (result.next()){
+           if (result.getString(4).equals(authorizedUser.getUsername()) && result.getString(5).equals(authorizedUser.getPassword())){
+
+               authorizedUser.setUserId(result.getInt(1));
+               authorizedUser.setFirstName(result.getString(2));
+               authorizedUser.setLastName(result.getString(3));
+               authorizedUser.setEmail(result.getString(6));
+               authorizedUser.setGender(result.getString(7));
+               counter++;
+               System.out.println(authorizedUser.getUserId());
+               break;
+           }
         }
-        if(counter >=1){
+        if(counter == 1){
             System.out.println("Successful");
             WindowManager.showWindow("app.fxml", authSignInButton);
-
-        }
+           // setAuthorizedUser(authorizedUser);
+           // System.out.println(authorizedUser.getUsername());
+            }
         else {
             Shake userLoginAnim = new Shake(loginField);
             Shake passAnim = new Shake(passwordField);
             passAnim.playAnim();
             userLoginAnim.playAnim();
         }
+
+        return  authorizedUser;
+
     }
 
 

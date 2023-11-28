@@ -1,6 +1,7 @@
 package AllClasses;
 
 public class User {
+    private int userId;
     private String firstName;
     private String lastName;
     private String username;
@@ -21,6 +22,14 @@ public class User {
 
     public String getFirstName() {
         return firstName;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public void setFirstName(String firstName) {

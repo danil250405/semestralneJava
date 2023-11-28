@@ -14,6 +14,11 @@
     <children>
         <AnchorPane layoutY="108.0" prefHeight="303.0" prefWidth="707.0" style="-fx-background-color: #fafafa;">
             <children>
+            <Label fx:id="hideLabel" layoutX="572.0" layoutY="234.0" prefHeight="37.0" prefWidth="134.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
                 <Button fx:id="addBookInYourLibraryBtn" layoutX="371.0" layoutY="235.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="196.0" style="-fx-background-color: #F39C63;" text="add book in your library" textFill="WHITE">
                     <font>
                         <Font size="16.0" />

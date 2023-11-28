@@ -1,6 +1,7 @@
 package AllClasses;
 
 public class Book {
+    boolean opportunityToBorrowABook;
    private String bookName;
    private int bookId;
     private String bookAuthor;
@@ -8,12 +9,21 @@ public class Book {
     private int iduser;
     private String location;
 
-    public Book(int bookId, String bookName,  String bookAuthor, int bookYear, String location) {
+    public Book(int bookId, String bookName,  String bookAuthor, int bookYear, String location, boolean opportunityToBorrowABook) {
         this.bookName = bookName;
         this.bookId = bookId;
         this.bookAuthor = bookAuthor;
         this.bookYear = bookYear;
         this.location = location;
+        this.opportunityToBorrowABook = opportunityToBorrowABook;
+    }
+
+    public boolean isOpportunityToBorrowABook() {
+        return opportunityToBorrowABook;
+    }
+
+    public void setOpportunityToBorrowABook(boolean opportunityToBorrowABook) {
+        this.opportunityToBorrowABook = opportunityToBorrowABook;
     }
 
     public Book(String bookName, String bookAuthor, int bookYear, int iduser) {
