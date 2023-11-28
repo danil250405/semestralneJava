@@ -4,21 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a5a3a1-911b-4f6a-8899-0dbb87064242" name="Changes" comment="semestralne zadanie">
-      <change afterPath="$PROJECT_DIR$/src/main/java/AllClasses/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/AllClasses/buttonHome.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/AddNewBookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/database/ConstForBooks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/LibraryBooksApp.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/addNewBookApp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/ConstForUsers.java" afterDir="false" />
+    <list default="true" id="b8a5a3a1-911b-4f6a-8899-0dbb87064242" name="Changes" comment="add book table">
       <change beforePath="$PROJECT_DIR$/src/main/java/database/DataBaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/DataBaseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/app.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/signUp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +99,7 @@
       <workItem from="1700926285399" duration="904000" />
       <workItem from="1700927362475" duration="1344000" />
       <workItem from="1701010635416" duration="7911000" />
-      <workItem from="1701163399260" duration="23176000" />
+      <workItem from="1701163399260" duration="23343000" />
     </task>
     <task id="LOCAL-00001" summary="semestralne zadanie">
       <option name="closed" value="true" />
@@ -130,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701015338637</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add book table">
+      <option name="closed" value="true" />
+      <created>1701200546928</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701200546928</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,6 +159,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="semestralne zadanie" />
-    <option name="LAST_COMMIT_MESSAGE" value="semestralne zadanie" />
+    <MESSAGE value="add book table" />
+    <option name="LAST_COMMIT_MESSAGE" value="add book table" />
   </component>
 </project>

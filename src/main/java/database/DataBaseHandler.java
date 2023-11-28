@@ -49,7 +49,7 @@ public class DataBaseHandler extends Configs {
     //take user from database and authorization him
     public ResultSet getUser(User user){
         ResultSet resSet = null;
-        String select = "SELECT * FROM users" + ConstForUsers.USER_TABLE + " WHERE " +
+        String select = "SELECT * FROM " + ConstForUsers.USER_TABLE + " WHERE " +
                 ConstForUsers.USERS_USERNAME + "=? AND " + ConstForUsers.USERS_PASSWORD + "=?";
 
 
