@@ -50,6 +50,8 @@ public class SignUpController extends Controller  {
     private TextField signUpUserName;
 
     @FXML
+    private Label labelCheckFullFields;
+    @FXML
     void initialize() {
 
 
@@ -73,18 +75,24 @@ public class SignUpController extends Controller  {
             gender = "Male";
         else if (signUpRadioBtnFemale.isSelected())
             gender = "Female";
-        else gender = "Gay";
-        if (checkUsername(username)){
-            User user = new User(firstName,lastName,username,password,email,gender);
-            dbHandler.signUpUser(user);
-            WindowManager.showWindow("hello-view.fxml", signUpButton);
-
+        else gender = "";
+        if (firstName.isEmpty() || lastName.isEmpty() || username.isEmpty() || password.isEmpty() || email.isEmpty() || gender.isEmpty()){
+            labelCheckFullFields.setText("Fill in all the fields");
         }
-         System.out.println("dinahui");
+        else {
+            if (checkUsername(username)) {
+                User user = new User(firstName, lastName, username, password, email, gender);
+                dbHandler.signUpUser(user);
+                WindowManager.showWindow("hello-view.fxml", signUpButton);
 
-        signUpUserName.clear();
-        usernameIsUsedTextField.setText("This username is used!!!");
+            }
+            else {
+                System.out.println("dinahui");
 
+                signUpUserName.clear();
+                usernameIsUsedTextField.setText("This username is used!!!");
+            }
+        }
     }
     private boolean checkUsername(String username){
         DataBaseHandler dataBaseHandler = new DataBaseHandler();

@@ -12,14 +12,14 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralnejava.SignUpController">
     <children>
-        <AnchorPane layoutX="-3.0" layoutY="95.0" prefHeight="303.0" prefWidth="707.0" style="-fx-background-color: #fafafa;">
+        <AnchorPane layoutY="95.0" prefHeight="303.0" prefWidth="707.0" style="-fx-background-color: #fafafa;">
             <children>
                 <TextField fx:id="signUpLastName" layoutX="445.0" layoutY="88.0" prefHeight="25.0" prefWidth="222.0" promptText="last name" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 10;">
                     <font>
                         <Font size="17.0" />
                     </font>
                 </TextField>
-                <PasswordField fx:id="signUpPassword" layoutX="243.0" layoutY="174.0" prefHeight="25.0" prefWidth="222.0" promptText="password" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 10;">
+                <PasswordField fx:id="signUpPassword" layoutX="242.0" layoutY="165.0" prefHeight="25.0" prefWidth="222.0" promptText="password" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 10;">
                     <font>
                         <Font size="17.0" />
                     </font>
@@ -60,6 +60,11 @@
                </font>
             </RadioButton>
             <Label fx:id="usernameIsUsedTextField" layoutX="265.0" layoutY="40.0" prefHeight="21.0" prefWidth="145.0" textFill="RED" />
+            <Label fx:id="labelCheckFullFields" layoutX="285.0" layoutY="204.0" prefHeight="27.0" prefWidth="146.0" textAlignment="CENTER" textFill="RED">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
       <Label layoutX="178.0" layoutY="23.0" prefHeight="71.0" prefWidth="345.0" text="LibraryNewGen" textAlignment="CENTER" textFill="WHITE">

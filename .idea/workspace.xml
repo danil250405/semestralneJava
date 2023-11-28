@@ -5,12 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8a5a3a1-911b-4f6a-8899-0dbb87064242" name="Changes" comment="semestralne zadanie">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/AllClasses/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/AllClasses/buttonHome.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/AddNewBookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/database/ConstForBooks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/LibraryBooksApp.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/addNewBookApp.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/assets/home_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/home_icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/Configs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/Configs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/Const.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/ConstForUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/DataBaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/DataBaseHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/app.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/hello-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/signUp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,29 +50,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "test2",
-    "last_opened_file_path": "X:/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.3816092",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;test2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;X:/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3816092&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\danil\OneDrive\Рабочий стол\studium\javaProjects\semestralneJava\src\main\java\assets" />
@@ -104,6 +112,7 @@
       <workItem from="1700926285399" duration="904000" />
       <workItem from="1700927362475" duration="1344000" />
       <workItem from="1701010635416" duration="7911000" />
+      <workItem from="1701163399260" duration="23176000" />
     </task>
     <task id="LOCAL-00001" summary="semestralne zadanie">
       <option name="closed" value="true" />

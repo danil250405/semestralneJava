@@ -11,7 +11,7 @@
     <children>
         <AnchorPane layoutX="-4.0" layoutY="108.0" prefHeight="303.0" prefWidth="707.0" style="-fx-background-color: #fafafa;">
          <children>
-            <Button fx:id="showAllbokBtn" layoutX="240.0" layoutY="28.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="202.0" style="-fx-background-color: #F39C63;" text="show all books" textFill="WHITE">
+            <Button fx:id="showAllBookBtn" layoutX="240.0" layoutY="28.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="202.0" style="-fx-background-color: #F39C63;" text="show all books" textFill="WHITE">
                <font>
                   <Font name="Monotype Corsiva" size="23.0" />
                </font>
