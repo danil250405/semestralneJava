@@ -1,0 +1,27 @@
+.btnicon{
+    -fx-fill: black;
+}
+
+.btnicon:hover{
+    -fx-fill: #F39C63;
+}
+.btnicon:pressed {
+    -fx-fill: #f18242;
+}
+.buttonStyle {
+    -fx-background-color:  #F39C63;
+    -fx-text-fill: #f1f1f1;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 8 15; /* Подстройте отступы в зависимости от вашего предпочтения */
+}
+
+.buttonStyle:hover {
+    -fx-background-color: #e09a0c;
+    -fx-text-fill:   #2E3348;
+}
+
+.buttonStyle:pressed {
+    -fx-background-color: #d17f00; /* Цвет для нажатия, может быть темнее основного hover цвета */
+    -fx-text-fill: #ffffff; /* Белый цвет текста для нажатия, например */
+}

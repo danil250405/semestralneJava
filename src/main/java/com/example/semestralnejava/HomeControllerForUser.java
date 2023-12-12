@@ -11,43 +11,44 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.SVGPath;
 
-public class HomeController {
+import static animations.Hover.hoverIcons;
+
+public class HomeControllerForUser {
+    @FXML
+    private SVGPath imageButtonHomeSvg;
+
+    @FXML
+    private Label librarynewgen;
+    @FXML
+    private SVGPath imageButtonLogInSvg;
 
     @FXML
     private ResourceBundle resources;
 
     @FXML
-    private SVGPath imageButtonLogInSvg;
-    @FXML
     private URL location;
 
     @FXML
-    private Button addNewBookBtn;
-
-    @FXML
     private Button myLibraryBtn;
-    @FXML
-    private Label librarynewgen;
-    @FXML
-    private SVGPath imageButtonHomeSvg;
+
 
     @FXML
     private Button showAllBookBtn;
     DataBaseHandler dataBaseHandler = new DataBaseHandler();
     @FXML
     void initialize() {
-      imageButtonLogInSvg.setOnMouseClicked(event->{
+
+        imageButtonLogInSvg.setOnMouseClicked(event->{
             buttonsImages.buttonReturnToLogInPressed(librarynewgen);
         });
         imageButtonHomeSvg.setOnMouseClicked(event ->{
             buttonsImages.buttonHomePressed(librarynewgen);
         });
-        addNewBookBtn.setOnAction(event ->{
-            System.out.println("qwerty");
-            WindowManager.showWindow("addNewBookApp.fxml", addNewBookBtn);
-        });
+
         showAllBookBtn.setOnAction(event->{
+            if (Controller.authorizedUser.getUsername().equals("admin"))
             WindowManager.showWindow("LibraryBooksApp.fxml", showAllBookBtn);
+            else WindowManager.showWindow("LibraryBooksAppForUser.fxml", showAllBookBtn);
             //  dataBaseHandler.refreshBooksId();
         });
         myLibraryBtn.setOnAction(event ->{

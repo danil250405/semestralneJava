@@ -1,16 +1,18 @@
 package com.example.semestralnejava;
 
-import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import AllClasses.User;
+import animations.Shake;
+import database.DataBaseHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class Controller {
 
@@ -31,16 +33,17 @@ public class Controller {
 
     @FXML
     private Button loginSignUpButton;
+    public static User authorizedUser = new User();
 
     @FXML
-    void initialize() {
-        //button for log in
-        loginSignUpButton.setOnAction(event->{
-            loginSignUpButton.getScene().getWindow().hide();
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("signUp.fxml"));
-            tryCatchLoadNewWindow(loader);
+    private Label librarynewgen;
 
+
+    @FXML
+    void initialize() throws SQLException, ClassNotFoundException {
+        //button for log in
+       loginSignUpButton.setOnAction(event->{
+            WindowManager.showWindow("signUp.fxml" , loginSignUpButton);
         });
 
         //button for sign in
@@ -49,35 +52,58 @@ public class Controller {
           String loginPassword = passwordField.getText().trim();
 
           if (!loginText.isEmpty() && !loginPassword.isEmpty()){
-              loginUser(loginText, loginPassword);
+              try {
+                  authorizedUser = loginUser(loginText, loginPassword);
+              } catch (SQLException | ClassNotFoundException e) {
+                  throw new RuntimeException(e);
+              }
           }
           else System.out.println("Login or Pass is Empty");
-
-
-          authSignInButton.getScene().getWindow().hide();
-          FXMLLoader loader = new FXMLLoader();
-          loader.setLocation(getClass().getResource("app.fxml"));
-          tryCatchLoadNewWindow(loader);
       });
-
+       System.out.println(authorizedUser.getEmail());
     }
 
-    private void loginUser(String loginText, String loginPassword) {
+    private User loginUser(String loginText, String loginPassword) throws SQLException, ClassNotFoundException {
+        DataBaseHandler dataBaseHandler = new DataBaseHandler();
+        User authorizedUser = new User();
+        authorizedUser.setUsername(loginText);
+        authorizedUser.setPassword(loginPassword);
+        ResultSet result = dataBaseHandler.getUser();
 
+        int counter = 0;
+        while (result.next()){
+           if (result.getString(4).equals(authorizedUser.getUsername()) && result.getString(5).equals(authorizedUser.getPassword())){
 
-    }
-
-    private void tryCatchLoadNewWindow(FXMLLoader loader) {
-        try {
-            loader.load();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+               authorizedUser.setUserId(result.getInt(1));
+               authorizedUser.setFirstName(result.getString(2));
+               authorizedUser.setLastName(result.getString(3));
+               authorizedUser.setEmail(result.getString(6));
+               authorizedUser.setGender(result.getString(7));
+               counter++;
+               System.out.println(authorizedUser.getUserId());
+               break;
+           }
         }
-        Parent root = loader.getRoot();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
+        if(counter == 1){
+            System.out.println("Successful");
+            if (authorizedUser.getUsername().equals("admin"))
+            WindowManager.showWindow("app.fxml", authSignInButton);
+            else WindowManager.showWindow("appForUser.fxml", authSignInButton);
+           // setAuthorizedUser(authorizedUser);
+           // System.out.println(authorizedUser.getUsername());
+            }
+        else {
+            Shake userLoginAnim = new Shake(loginField);
+            Shake passAnim = new Shake(passwordField);
+            passAnim.playAnim();
+            userLoginAnim.playAnim();
+        }
+
+        return  authorizedUser;
+
     }
+
+
 
 }
 
