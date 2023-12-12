@@ -19,12 +19,12 @@
                   <Font size="15.0" />
                </font>
             </Label>
-                <Button fx:id="addBookInYourLibraryBtn" layoutX="371.0" layoutY="235.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="196.0" style="-fx-background-color: #F39C63;" text="add book in your library" textFill="WHITE">
+                <Button fx:id="addBookInYourLibraryBtn" layoutX="361.0" layoutY="206.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="196.0" style="-fx-background-color: #F39C63;" text="add book in your library" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Button>
-            <TableView fx:id="fullTable" prefHeight="214.0" prefWidth="707.0">
+            <TableView fx:id="fullTable" prefHeight="206.0" prefWidth="707.0">
               <columns>
                 <TableColumn fx:id="columnIdBook" prefWidth="51.19998013973236" text="Id" />
                 <TableColumn fx:id="columnNameBook" prefWidth="155.19998931884766" text="Name" />
@@ -39,6 +39,11 @@
                </font>
             </Label>
             <TextField fx:id="bookIdWchichYouWantTextField" layoutX="253.0" layoutY="240.0" prefHeight="26.0" prefWidth="71.0" />
+            <Button fx:id="deleteBookBtn" layoutX="361.0" layoutY="253.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="196.0" style="-fx-background-color: #F39C63;" text="delete book" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
             </children>
         </AnchorPane>
         <Label layoutX="177.0" layoutY="36.0" prefHeight="71.0" prefWidth="345.0" text="LibraryNewGen" textAlignment="CENTER" textFill="WHITE">

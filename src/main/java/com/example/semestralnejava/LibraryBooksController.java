@@ -48,6 +48,8 @@ public class LibraryBooksController extends Controller{
     private TableColumn<Book, String> columnNameBook;
 
     @FXML
+    private Button deleteBookBtn;
+    @FXML
     private TableColumn<Book, Integer> columnYearBook;
 
     @FXML
@@ -62,6 +64,7 @@ public class LibraryBooksController extends Controller{
             buttonHome.buttonHomePressed(imageButtonHome);
         });
         addBooksInList();
+
         addBookInYourLibraryBtn.setOnAction(event ->{
             try {
                 addBookInYourLibrary();
@@ -70,15 +73,49 @@ public class LibraryBooksController extends Controller{
             }
 
         });
+        deleteBookBtn.setOnAction(event ->{
+            try {
+                deleteBook();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        });
 
 
 
     }
 
+    private void deleteBook() throws SQLException, ClassNotFoundException {
+        int idBookWhichYouWant = Integer.parseInt(bookIdWchichYouWantTextField.getText().trim()) + 1;
+        //Book book = bookList.get(idBookWhichYouWant);
+        if (idBookWhichYouWant <= dataBaseHandler.getCountFromBooks()+1){
+
+            //System.out.println(authorizedUser.getUsername());
+           // book.setIduser(authorizedUser.getUserId());
+            //  book.setLocation("In " + authorizedUser.getUsername() + " library");
+            //dataBaseHandler.setNewUserIdForBook(book.getBookId(), book.getIduser(), book.getLocation());
+            dataBaseHandler.deleteRowFromBooksTable(idBookWhichYouWant -1);
+
+            hideLabel.setText("Book deleted susccseful");
+            hideLabel.setTextFill(Color.GREEN);
+            fullTable.getItems().clear();
+            addBooksInList();
+            fullTable.refresh();
+        }
+        else
+        {
+
+            hideLabel.setText("This book is taken");
+            hideLabel.setTextFill(Color.RED);
+        }
+
+    }
     private void addBookInYourLibrary() throws SQLException, ClassNotFoundException {
         int idBookWhichYouWant = Integer.parseInt(bookIdWchichYouWantTextField.getText().trim()) - 1;
         Book book = bookList.get(idBookWhichYouWant);
-        if (book.isOpportunityToBorrowABook()){
+        if (book.isOpportunityToBorrowABook() && book.getBookId() <= dataBaseHandler.getCountFromBooks()){
             System.out.println(authorizedUser.getUsername());
             book.setIduser(authorizedUser.getUserId());
             book.setLocation("In " + authorizedUser.getUsername() + " library");
@@ -88,11 +125,16 @@ public class LibraryBooksController extends Controller{
             hideLabel.setTextFill(Color.GREEN);
             fullTable.refresh();
         }
-        else
-        {
-
+        else if (!book.isOpportunityToBorrowABook()){
             hideLabel.setText("This book is taken");
             hideLabel.setTextFill(Color.RED);
+        }
+
+        else
+        {
+            hideLabel.setText("enter a real id");
+            hideLabel.setTextFill(Color.RED);
+
         }
 
 

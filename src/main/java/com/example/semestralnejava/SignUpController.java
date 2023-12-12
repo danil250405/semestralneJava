@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class SignUpController extends Controller  {
+public class SignUpController {
 
     @FXML
     private ResourceBundle resources;
@@ -51,6 +51,7 @@ public class SignUpController extends Controller  {
 
     @FXML
     private Label labelCheckFullFields;
+    public static User user = new User();
     @FXML
     void initialize() {
 
@@ -94,6 +95,9 @@ public class SignUpController extends Controller  {
             }
         }
     }
+
+
+
     private boolean checkUsername(String username){
         DataBaseHandler dataBaseHandler = new DataBaseHandler();
         User user = new User();

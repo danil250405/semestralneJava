@@ -2,11 +2,7 @@ package database;
 import AllClasses.Book;
 import AllClasses.User;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import  java.sql.ResultSet;
+import java.sql.*;
 
 
 public class DataBaseHandler extends Configs {
@@ -130,4 +126,59 @@ public class DataBaseHandler extends Configs {
         }
 
     }
+    public int getCountFromBooks(){
+        String sql = "SELECT COUNT(*) FROM books";
+        // Подготавливаем SQL-запрос
+        try (PreparedStatement preparedStatement = dbConnection.prepareStatement(sql)) {
+            // Выполняем запрос и получаем результат
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                // Переходим к первой строке результата
+                resultSet.next();
+
+                // Получаем значение из первой колонки (количество строк)
+                int rowCount = resultSet.getInt(1);
+
+                // Выводим результат
+                System.out.println("Количество строк в таблице: " + rowCount);
+                return rowCount;
+            }
+        } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+    public void deleteRowFromBooksTable(int rowIdDelete) {
+        String sqlDelete = "DELETE FROM books WHERE " + ConstForBooks.BOOK_ID + " = " + rowIdDelete;
+
+        // Подготавливаем SQL-запрос для удаления
+        try (PreparedStatement deleteStatement = dbConnection.prepareStatement(sqlDelete)) {
+            // Выполняем запрос на удаление
+            int rowsAffected = deleteStatement.executeUpdate();
+            // Выводим результат удаления
+            System.out.println("Количество удаленных строк: " + rowsAffected);
+            System.out.println("Номер удаленоой строки: " + rowIdDelete);
+        } catch (SQLException ex) {
+            throw new RuntimeException("Ошибка при удалении строки", ex);
+        }
+
+
+
+    }
+    public void refreshBooksId(){
+        // Сначала обнуляем счетчик
+        String resetCounterQuery = "SET @counter = 0;";
+        try (Statement resetCounterStatement = dbConnection.createStatement()) {
+            resetCounterStatement.executeUpdate(resetCounterQuery);
+        } catch (SQLException ex) {
+            throw new RuntimeException("Ошибка при обнулении счетчика", ex);
+        }
+
+        // Затем обновляем идентификаторы с использованием счетчика
+        String updateQuery = "UPDATE books SET " + ConstForBooks.BOOK_ID + " = @counter:=@counter+1 ORDER BY " + ConstForBooks.BOOK_ID + ";";
+        try (Statement updateStatement = dbConnection.createStatement()) {
+            updateStatement.executeUpdate(updateQuery);
+        } catch (SQLException ex) {
+            throw new RuntimeException("Ошибка при обновлении идентификаторов", ex);
+        }
+    }
+
 }

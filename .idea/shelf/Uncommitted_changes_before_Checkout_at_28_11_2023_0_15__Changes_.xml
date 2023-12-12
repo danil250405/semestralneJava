@@ -1,9 +1,0 @@
-<changelist name="Uncommitted_changes_before_Checkout_at_28_11_2023_0_15_[Changes]" date="1701126930409" recycled="true" deleted="true">
-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_11_2023_0_15_[Changes]/shelved.patch" />
-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 28.11.2023 0:15 [Changes]" />
-  <binary>
-    <option name="BEFORE_PATH" value="src/main/java/assets/home_icon.png" />
-    <option name="AFTER_PATH" value="src/main/resources/com/example/semestralnejava/home_icon.png" />
-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_11_2023_0_15_[Changes]/home_icon.png" />
-  </binary>
-</changelist>

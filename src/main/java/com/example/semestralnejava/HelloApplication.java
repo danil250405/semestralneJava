@@ -15,9 +15,10 @@ public class HelloApplication extends Application {
         primaryStage.setTitle("Library");
         primaryStage.setScene(new Scene(root, 700, 400));
         primaryStage.show();
+
     }
 
-    public static void main(String[] args) {
+    public static void main() {
         launch();
     }
 }

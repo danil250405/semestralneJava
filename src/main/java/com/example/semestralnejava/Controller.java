@@ -33,6 +33,9 @@ public class Controller {
     @FXML
     private Button loginSignUpButton;
     public static User authorizedUser = new User();
+
+
+
     @FXML
     void initialize() throws SQLException, ClassNotFoundException {
         //button for log in

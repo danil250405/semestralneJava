@@ -43,7 +43,9 @@ public class AddNewBookController {
 
 
         imageButtonHome.setOnMouseClicked(event ->{
+            DataBaseHandler dataBaseHandler = new DataBaseHandler();
             buttonHome.buttonHomePressed(imageButtonHome);
+
         });
                 //allow for user only number in field year
         bookYearTextField.textProperty().addListener((observable, oldValue, newValue) -> {
