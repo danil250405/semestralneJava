@@ -93,6 +93,7 @@ public class DataBaseHandler extends Configs {
     public ResultSet getAllBooks() throws SQLException, ClassNotFoundException {
         ResultSet resSet = null;
         String select = "SELECT * FROM books";
+
         PreparedStatement prSt = null;
         prSt =getDbConnection().prepareStatement(select);
         resSet = prSt.executeQuery();
@@ -100,7 +101,8 @@ public class DataBaseHandler extends Configs {
 
         return resSet;
     }
-    public void setNewUserIdForBook(int bookId, int newUserId, String newUsername) throws SQLException, ClassNotFoundException {
+
+    public boolean setNewUserIdForBook(int bookId, int newUserId, String newUsername) throws SQLException, ClassNotFoundException {
         String updateQuery = "UPDATE " + ConstForBooks.BOOK_TABLE +
                 " SET " + ConstForBooks.ID_USER + " = ?, " +
                 ConstForBooks.BOOK_LOCATION + " =?" +
@@ -117,16 +119,21 @@ public class DataBaseHandler extends Configs {
 
             if (rowsAffected > 0) {
                 System.out.println("Данные успешно обновлены");
+                return true;
             } else {
                 System.out.println("Обновление данных не выполнено");
+                return false;
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
 
     }
+
     public int getCountFromBooks(){
+
         String sql = "SELECT COUNT(*) FROM books";
         // Подготавливаем SQL-запрос
         try (PreparedStatement preparedStatement = dbConnection.prepareStatement(sql)) {
@@ -146,8 +153,9 @@ public class DataBaseHandler extends Configs {
             throw new RuntimeException(ex);
         }
     }
-    public void deleteRowFromBooksTable(int rowIdDelete) {
-        String sqlDelete = "DELETE FROM books WHERE " + ConstForBooks.BOOK_ID + " = " + rowIdDelete;
+    public boolean deleteRowFromBooksTable(int rowIdDelete) {
+        String sqlDelete = "DELETE FROM books WHERE " + ConstForBooks.BOOK_ID + " = " + rowIdDelete +
+                            " AND " + ConstForBooks.ID_USER + " = 0";
 
         // Подготавливаем SQL-запрос для удаления
         try (PreparedStatement deleteStatement = dbConnection.prepareStatement(sqlDelete)) {
@@ -156,15 +164,22 @@ public class DataBaseHandler extends Configs {
             // Выводим результат удаления
             System.out.println("Количество удаленных строк: " + rowsAffected);
             System.out.println("Номер удаленоой строки: " + rowIdDelete);
+            if (rowsAffected > 0) {
+                return true; // Успешное удаление
+            } else {
+                return false; // Ничего не было удалено
+            }
         } catch (SQLException ex) {
+
             throw new RuntimeException("Ошибка при удалении строки", ex);
+
         }
 
 
 
     }
-    public void refreshBooksId(){
-        // Сначала обнуляем счетчик
+    public void refreshBooksId() {
+        // Обнуляем счетчик
         String resetCounterQuery = "SET @counter = 0;";
         try (Statement resetCounterStatement = dbConnection.createStatement()) {
             resetCounterStatement.executeUpdate(resetCounterQuery);
@@ -172,13 +187,58 @@ public class DataBaseHandler extends Configs {
             throw new RuntimeException("Ошибка при обнулении счетчика", ex);
         }
 
-        // Затем обновляем идентификаторы с использованием счетчика
-        String updateQuery = "UPDATE books SET " + ConstForBooks.BOOK_ID + " = @counter:=@counter+1 ORDER BY " + ConstForBooks.BOOK_ID + ";";
+        // Обновляем идентификаторы с использованием счетчика
+        String updateQuery = "UPDATE books SET " + ConstForBooks.BOOK_ID + " = (@counter:=@counter+1) ORDER BY " + ConstForBooks.BOOK_ID + ";";
         try (Statement updateStatement = dbConnection.createStatement()) {
             updateStatement.executeUpdate(updateQuery);
         } catch (SQLException ex) {
             throw new RuntimeException("Ошибка при обновлении идентификаторов", ex);
         }
     }
+    public Book getBookById(int bookIdfromUser) throws SQLException, ClassNotFoundException {
+        ResultSet resSet = null;
+        String select = "SELECT * FROM books WHERE " + ConstForBooks.BOOK_ID + "=?";
+        try (PreparedStatement prSt = getDbConnection().prepareStatement(select)) {
+            prSt.setInt(1, bookIdfromUser);
+            resSet = prSt.executeQuery();
+
+            if (resSet.next()) {
+                // Продолжайте извлекать данные только если есть строки в результате запроса
+                Book book = new Book(resSet.getInt(1),resSet.getString(2), resSet.getString(3),
+                        resSet.getInt(4), resSet.getInt(5), resSet.getString(6));
+                System.out.println(book.getBookId() +","+ book.getBookName() +","+ book.getBookAuthor() +","+ book.getIduser());
+                return book; // Возвращает найденную книгу
+            } else {
+                // Обработка ситуации, когда результат запроса пуст
+                System.out.println("Книга с указанным ID не найдена.");
+                return null; // Возвращает null, чтобы указать, что книга не найдена
+            }
+        } finally {
+            if (resSet != null) {
+                resSet.close();
+            }
+        }
+    }
+    public boolean deleteBookFromUserLibrary(int bookIdFromUser) {
+        String updateQuery = "UPDATE " + ConstForBooks.BOOK_TABLE +
+                " SET " + ConstForBooks.ID_USER + " = 0 " + ","+
+                ConstForBooks.BOOK_LOCATION + " = 'In library'" +
+                " WHERE " + ConstForBooks.BOOK_ID + " = ?";
+
+        try (Connection connection = getDbConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(updateQuery)) {
+
+            preparedStatement.setInt(1, bookIdFromUser);
+            int rowsAffected = preparedStatement.executeUpdate();
+            if (rowsAffected > 0) return true;
+            else return false;
+
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace(); // Log the exception or handle it appropriately
+            return false;
+        }
+    }
+
+
 
 }

@@ -32,6 +32,14 @@ public class Book {
         this.bookYear = bookYear;
         this.iduser = iduser;
     }
+    public Book(int bookId, String bookName, String bookAuthor, int bookYear, int iduser, String location) {
+        this.bookId = bookId;
+        this.bookName = bookName;
+        this.bookAuthor = bookAuthor;
+        this.bookYear = bookYear;
+        this.iduser = iduser;
+        this.location = location;
+    }
     public Book(){}
     public String getBookName() {
         return bookName;

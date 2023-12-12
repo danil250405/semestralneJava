@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import AllClasses.buttonHome;
+import database.DataBaseHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
@@ -20,14 +21,14 @@ public class HomeController {
     private Button addNewBookBtn;
 
     @FXML
-    private Button deleteBookBtn;
+    private Button myLibraryBtn;
 
     @FXML
     private ImageView imageButtonHome;
 
     @FXML
     private Button showAllBookBtn;
-
+    DataBaseHandler dataBaseHandler = new DataBaseHandler();
     @FXML
     void initialize() {
 
@@ -40,6 +41,10 @@ public class HomeController {
         });
         showAllBookBtn.setOnAction(event->{
             WindowManager.showWindow("LibraryBooksApp.fxml", showAllBookBtn);
+            //  dataBaseHandler.refreshBooksId();
+        });
+        myLibraryBtn.setOnAction(event ->{
+            WindowManager.showWindow("myLibrary.fxml", showAllBookBtn);
         });
 
     }

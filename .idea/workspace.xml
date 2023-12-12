@@ -4,22 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a5a3a1-911b-4f6a-8899-0dbb87064242" name="Changes" comment="admin can take books from table">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_11_2023_0_15_[Changes]/home_icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_11_2023_0_15_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_28_11_2023_0_15__Changes_.xml" beforeDir="false" />
+    <list default="true" id="b8a5a3a1-911b-4f6a-8899-0dbb87064242" name="Changes" comment="admin can take books from table&#10; and i return in this project">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/MyLibraryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/myLibrary.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/AddNewBookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/AddNewBookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AllClasses/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllClasses/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/Configs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/Configs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/DataBaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/DataBaseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/LibraryBooksApp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/LibraryBooksApp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/app.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +67,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "test2",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/danil/IdeaProjects/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0.jar",
+    "last_opened_file_path": "C:/Users/danil/Desktop/SceneBuilder.lnk",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -83,6 +76,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.3816092",
+    "settings.editor.selected.configurable": "preferences.JavaFX",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -154,6 +148,7 @@
       <workItem from="1701256836284" duration="22839000" />
       <workItem from="1701463280046" duration="1891000" />
       <workItem from="1702384263411" duration="757000" />
+      <workItem from="1702385034777" duration="14770000" />
     </task>
     <task id="LOCAL-00001" summary="semestralne zadanie">
       <option name="closed" value="true" />
@@ -195,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701212269911</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="admin can take books from table&#10; and i return in this project">
+      <option name="closed" value="true" />
+      <created>1702385280296</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702385280296</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,6 +234,11 @@
     <MESSAGE value="semestralne zadanie" />
     <MESSAGE value="add book table" />
     <MESSAGE value="admin can take books from table" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin can take books from table" />
+    <MESSAGE value="admin can take books from table&#10; and i return in this project" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin can take books from table&#10; and i return in this project" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

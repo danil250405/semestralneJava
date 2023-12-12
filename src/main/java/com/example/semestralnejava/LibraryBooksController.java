@@ -90,13 +90,14 @@ public class LibraryBooksController extends Controller{
     private void deleteBook() throws SQLException, ClassNotFoundException {
         int idBookWhichYouWant = Integer.parseInt(bookIdWchichYouWantTextField.getText().trim()) + 1;
         //Book book = bookList.get(idBookWhichYouWant);
-        if (idBookWhichYouWant <= dataBaseHandler.getCountFromBooks()+1){
+        System.out.println(idBookWhichYouWant);
+        if ( dataBaseHandler.deleteRowFromBooksTable(idBookWhichYouWant -1)){
 
             //System.out.println(authorizedUser.getUsername());
            // book.setIduser(authorizedUser.getUserId());
             //  book.setLocation("In " + authorizedUser.getUsername() + " library");
             //dataBaseHandler.setNewUserIdForBook(book.getBookId(), book.getIduser(), book.getLocation());
-            dataBaseHandler.deleteRowFromBooksTable(idBookWhichYouWant -1);
+           ;
 
             hideLabel.setText("Book deleted susccseful");
             hideLabel.setTextFill(Color.GREEN);
@@ -104,18 +105,26 @@ public class LibraryBooksController extends Controller{
             addBooksInList();
             fullTable.refresh();
         }
+
         else
         {
 
-            hideLabel.setText("This book is taken");
+            hideLabel.setText("You can`t do it");
             hideLabel.setTextFill(Color.RED);
         }
 
     }
     private void addBookInYourLibrary() throws SQLException, ClassNotFoundException {
-        int idBookWhichYouWant = Integer.parseInt(bookIdWchichYouWantTextField.getText().trim()) - 1;
-        Book book = bookList.get(idBookWhichYouWant);
-        if (book.isOpportunityToBorrowABook() && book.getBookId() <= dataBaseHandler.getCountFromBooks()){
+        int idBookWhichYouWant = Integer.parseInt(bookIdWchichYouWantTextField.getText().trim());
+        Book book = dataBaseHandler.getBookById(idBookWhichYouWant);
+
+      // Book book = dataBaseHandler.getBookById(idBookWhichYouWant);
+        System.out.println(book.getBookAuthor());
+        if (book.getIduser() == 0){
+            book.setOpportunityToBorrowABook(true);
+        }
+        else book.setOpportunityToBorrowABook(false);
+        if (book.isOpportunityToBorrowABook() && book != null){
             System.out.println(authorizedUser.getUsername());
             book.setIduser(authorizedUser.getUserId());
             book.setLocation("In " + authorizedUser.getUsername() + " library");
@@ -123,6 +132,8 @@ public class LibraryBooksController extends Controller{
 
             hideLabel.setText("You take this book");
             hideLabel.setTextFill(Color.GREEN);
+            bookList.clear();
+            addBooksInList();
             fullTable.refresh();
         }
         else if (!book.isOpportunityToBorrowABook()){
@@ -146,7 +157,9 @@ public class LibraryBooksController extends Controller{
         columnAuthorBook.setCellValueFactory(new PropertyValueFactory<Book, String>("bookAuthor"));
         columnYearBook.setCellValueFactory(new PropertyValueFactory<Book, Integer>("bookYear"));
         columnLocationBook.setCellValueFactory(new PropertyValueFactory<Book, String>("location"));
+
         ResultSet books = dataBaseHandler.getAllBooks();
+        System.out.println(books);
         boolean opportunityToBorrowABook = false;
         String location;
         while (books.next()) {
