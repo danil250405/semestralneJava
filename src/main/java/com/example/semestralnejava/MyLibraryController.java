@@ -19,6 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.SVGPath;
 
 public class MyLibraryController extends Controller {
 
@@ -53,17 +54,18 @@ public class MyLibraryController extends Controller {
     private Label hideLabel;
 
     @FXML
-    private ImageView imageButtonHome;
+    private SVGPath imageButtonHomeSvg;
     DataBaseHandler dataBaseHandler = new DataBaseHandler();
     private final ObservableList<Book> bookList = FXCollections.observableArrayList();
 
-
+    @FXML
+    private Label librarynewgen;
     @FXML
     void initialize() throws SQLException, ClassNotFoundException {
-        //System.out.println(getAuthorizedUser().getUserId());
-        //DataBaseHandler dataBaseHandler = new DataBaseHandler();
-        imageButtonHome.setOnMouseClicked(event ->{
-            buttonsImages.buttonHomePressed(imageButtonHome);
+        System.out.println(Controller.authorizedUser.getUserId());
+        DataBaseHandler dataBaseHandler = new DataBaseHandler();
+        imageButtonHomeSvg.setOnMouseClicked(event ->{
+            buttonsImages.buttonHomePressed(librarynewgen);
         });
         addBooksInList();
 deleteBookBtn.setOnAction(event->{

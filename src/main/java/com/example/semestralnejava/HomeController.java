@@ -7,7 +7,9 @@ import AllClasses.buttonsImages;
 import database.DataBaseHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.shape.SVGPath;
 
 public class HomeController {
 
@@ -15,7 +17,7 @@ public class HomeController {
     private ResourceBundle resources;
 
     @FXML
-    private ImageView imageButtonLogIn;
+    private SVGPath imageButtonLogInSvg;
     @FXML
     private URL location;
 
@@ -24,20 +26,21 @@ public class HomeController {
 
     @FXML
     private Button myLibraryBtn;
-
     @FXML
-    private ImageView imageButtonHome;
+    private Label librarynewgen;
+    @FXML
+    private SVGPath imageButtonHomeSvg;
 
     @FXML
     private Button showAllBookBtn;
     DataBaseHandler dataBaseHandler = new DataBaseHandler();
     @FXML
     void initialize() {
-        imageButtonLogIn.setOnMouseClicked(event->{
-            buttonsImages.buttonReturnToLogInPressed(imageButtonHome);
+      imageButtonLogInSvg.setOnMouseClicked(event->{
+            buttonsImages.buttonReturnToLogInPressed(librarynewgen);
         });
-        imageButtonHome.setOnMouseClicked(event ->{
-            buttonsImages.buttonHomePressed(imageButtonHome);
+        imageButtonHomeSvg.setOnMouseClicked(event ->{
+            buttonsImages.buttonHomePressed(librarynewgen);
         });
         addNewBookBtn.setOnAction(event ->{
             System.out.println("qwerty");

@@ -5,9 +5,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralnejava.LibraryBooksController">
@@ -19,7 +18,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-                <Button fx:id="addBookInYourLibraryBtn" layoutX="361.0" layoutY="206.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="196.0" style="-fx-background-color: #F39C63;" text="add book in your library" textFill="WHITE">
+                <Button fx:id="addBookInYourLibraryBtn" layoutX="351.0" layoutY="206.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" styleClass="buttonStyle" stylesheets="@Style.css" text="add book in your library" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -39,20 +38,22 @@
                </font>
             </Label>
             <TextField fx:id="bookIdWchichYouWantTextField" layoutX="253.0" layoutY="240.0" prefHeight="26.0" prefWidth="71.0" />
-            <Button fx:id="deleteBookBtn" layoutX="361.0" layoutY="253.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="196.0" style="-fx-background-color: #F39C63;" text="delete book" textFill="WHITE">
+            <Button fx:id="deleteBookBtn" layoutX="351.0" layoutY="253.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" styleClass="buttonStyle" stylesheets="@Style.css" text="delete book" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
             </children>
         </AnchorPane>
-        <Label layoutX="177.0" layoutY="36.0" prefHeight="71.0" prefWidth="345.0" text="LibraryNewGen" textAlignment="CENTER" textFill="WHITE">
+        <Label fx:id="librarynewgen" layoutX="177.0" layoutY="36.0" prefHeight="71.0" prefWidth="345.0" text="LibraryNewGen" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font name="Segoe Script" size="39.0" />
             </font>
         </Label>
-        <ImageView fx:id="imageButtonHome" fitHeight="71.0" fitWidth="71.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-            <Image url="@home_icon.png" />
-        </ImageView>
+      <AnchorPane layoutX="-182.0" layoutY="-223.0" prefHeight="0.0" prefWidth="0.0" scaleX="0.11" scaleY="0.11" styleClass="btnicon" stylesheets="@Style.css">
+         <children>
+            <SVGPath fx:id="imageButtonHomeSvg" content="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" layoutX="-106.0" layoutY="36.0" styleClass="btnicon" />
+         </children>
+      </AnchorPane>
     </children>
 </AnchorPane>

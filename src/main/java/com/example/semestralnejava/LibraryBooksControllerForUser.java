@@ -10,13 +10,14 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.SVGPath;
 
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class LibraryBooksControllerForUser extends Controller{
+public class LibraryBooksControllerForUser {
 
     @FXML
     private Label hideLabel;
@@ -51,15 +52,16 @@ public class LibraryBooksControllerForUser extends Controller{
     private TableColumn<Book, Integer> columnYearBook;
 
     @FXML
-    private ImageView imageButtonHome;
+    private SVGPath imageButtonHomeSvg;
     DataBaseHandler dataBaseHandler = new DataBaseHandler();
     private final ObservableList<Book> bookList = FXCollections.observableArrayList();
-
+    @FXML
+    private Label librarynewgen;
     @FXML
     void initialize() throws SQLException, ClassNotFoundException {
-        //System.out.println(getAuthorizedUser().getUserId());
-        imageButtonHome.setOnMouseClicked(event ->{
-            buttonsImages.buttonHomePressed(imageButtonHome);
+        System.out.println(Controller.authorizedUser.getUserId());
+        imageButtonHomeSvg.setOnMouseClicked(event ->{
+            buttonsImages.buttonHomePressed(librarynewgen);
         });
         addBooksInList();
 
@@ -89,9 +91,9 @@ public class LibraryBooksControllerForUser extends Controller{
         }
         else book.setOpportunityToBorrowABook(false);
         if (book.isOpportunityToBorrowABook() && book != null){
-            System.out.println(authorizedUser.getUsername());
-            book.setIduser(authorizedUser.getUserId());
-            book.setLocation("In " + authorizedUser.getUsername() + " library");
+            System.out.println(Controller.authorizedUser.getUsername());
+            book.setIduser(Controller.authorizedUser.getUserId());
+            book.setLocation("In " +Controller.authorizedUser.getUsername() + " library");
             dataBaseHandler.setNewUserIdForBook(book.getBookId(), book.getIduser(), book.getLocation());
 
             hideLabel.setText("You take this book");

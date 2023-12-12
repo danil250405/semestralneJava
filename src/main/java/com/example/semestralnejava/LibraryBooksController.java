@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.SVGPath;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -51,17 +52,18 @@ public class LibraryBooksController extends Controller{
     private Button deleteBookBtn;
     @FXML
     private TableColumn<Book, Integer> columnYearBook;
-
     @FXML
-    private ImageView imageButtonHome;
+    private Label librarynewgen;
+    @FXML
+    private SVGPath imageButtonHomeSvg;
     DataBaseHandler dataBaseHandler = new DataBaseHandler();
     private final ObservableList<Book> bookList = FXCollections.observableArrayList();
 
     @FXML
     void initialize() throws SQLException, ClassNotFoundException {
-        //System.out.println(getAuthorizedUser().getUserId());
-        imageButtonHome.setOnMouseClicked(event ->{
-            buttonsImages.buttonHomePressed(imageButtonHome);
+       //System.out.println(getAuthorizedUser().getUserId());
+        imageButtonHomeSvg.setOnMouseClicked(event ->{
+            buttonsImages.buttonHomePressed(librarynewgen);
         });
         addBooksInList();
 

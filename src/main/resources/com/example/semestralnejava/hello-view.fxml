@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralnejava.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" style="-fx-background-color: #2E3348;" stylesheets="Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralnejava.Controller">
    <children>
       <AnchorPane layoutX="-3.0" layoutY="108.0" prefHeight="303.0" prefWidth="707.0" style="-fx-background-color: #fafafa;">
          <children>
@@ -21,19 +21,19 @@
                   <Font size="17.0" />
                </font>
             </PasswordField>
-            <Button fx:id="authSignInButton" layoutX="285.0" layoutY="171.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="137.0" style="-fx-background-color: #F39C63;" text="Sign In" textFill="WHITE">
+            <Button fx:id="authSignInButton" layoutX="285.0" layoutY="171.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="137.0" styleClass="buttonStyle" stylesheets="@Style.css" text="Sign In" textFill="WHITE">
                <font>
                   <Font name="Monotype Corsiva" size="28.0" />
                </font>
             </Button>
          </children>
       </AnchorPane>
-      <Label layoutX="194.0" layoutY="24.0" prefHeight="71.0" prefWidth="345.0" text="LibraryNewGen" textAlignment="CENTER" textFill="WHITE">
+      <Label fx:id="librarynewgen" layoutX="194.0" layoutY="24.0" prefHeight="71.0" prefWidth="345.0" text="LibraryNewGen" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Segoe Script" size="39.0" />
          </font>
       </Label>
-      <Button fx:id="loginSignUpButton" layoutX="595.0" layoutY="14.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="85.0" style="-fx-background-color: #F39C63;" text="Log In" textFill="WHITE">
+      <Button fx:id="loginSignUpButton" layoutX="595.0" layoutY="14.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="85.0" styleClass="buttonStyle" stylesheets="@Style.css" text="Log In" textFill="WHITE">
          <font>
             <Font name="Monotype Corsiva" size="20.0" />
          </font>

@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.SVGPath;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -33,18 +34,19 @@ public class AddNewBookController {
     private TextField bookYearTextField;
 
     @FXML
-    private ImageView imageButtonHome;
+    private SVGPath imageButtonHomeSvg;
 
     @FXML
     private Label labelCheckFullFields;
-
+    @FXML
+    private Label librarynewgen;
     @FXML
     void initialize() {
 
 
-        imageButtonHome.setOnMouseClicked(event ->{
+        imageButtonHomeSvg.setOnMouseClicked(event ->{
             DataBaseHandler dataBaseHandler = new DataBaseHandler();
-            buttonsImages.buttonHomePressed(imageButtonHome);
+            buttonsImages.buttonHomePressed(librarynewgen);
 
         });
                 //allow for user only number in field year

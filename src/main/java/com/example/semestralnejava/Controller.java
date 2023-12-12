@@ -10,6 +10,7 @@ import animations.Shake;
 import database.DataBaseHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -34,13 +35,14 @@ public class Controller {
     private Button loginSignUpButton;
     public static User authorizedUser = new User();
 
-
+    @FXML
+    private Label librarynewgen;
 
 
     @FXML
     void initialize() throws SQLException, ClassNotFoundException {
         //button for log in
-        loginSignUpButton.setOnAction(event->{
+       loginSignUpButton.setOnAction(event->{
             WindowManager.showWindow("signUp.fxml" , loginSignUpButton);
         });
 

@@ -4,19 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a5a3a1-911b-4f6a-8899-0dbb87064242" name="Changes" comment="added base for user">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/logIn.png" afterDir="false" />
+    <list default="true" id="b8a5a3a1-911b-4f6a-8899-0dbb87064242" name="Changes" comment="added button to return login">
+      <change afterPath="$PROJECT_DIR$/src/main/java/animations/Hover.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/Style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AllClasses/buttonHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllClasses/buttonsImages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AllClasses/buttonsImages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllClasses/buttonsImages.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/AddNewBookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/AddNewBookController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeControllerForUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeControllerForUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksControllerForUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksControllerForUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/MyLibraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/MyLibraryController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/LibraryBooksApp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/LibraryBooksApp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/LibraryBooksAppForUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/LibraryBooksAppForUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/addNewBookApp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/addNewBookApp.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/app.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/appForUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/appForUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/myLibrary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/myLibrary.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/signUp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +65,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "test2",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/danil/IdeaProjects/semestralneJava/src/main/resources/com/example/semestralnejava",
+    "last_opened_file_path": "C:/Users/danil/IdeaProjects/semestralneJava/src/main/java/com/example/semestralnejava",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -77,6 +84,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danil\IdeaProjects\semestralneJava\src\main\java\com\example\semestralnejava" />
       <recent name="C:\Users\danil\IdeaProjects\semestralneJava\src\main\resources\com\example\semestralnejava" />
       <recent name="C:\Users\danil\OneDrive\Рабочий стол\studium\javaProjects\semestralneJava\src\main\java\assets" />
     </key>
@@ -122,7 +130,7 @@
       <workItem from="1700927362475" duration="1344000" />
       <workItem from="1701010635416" duration="929000" />
       <workItem from="1702403746507" duration="56000" />
-      <workItem from="1702403824332" duration="3669000" />
+      <workItem from="1702403824332" duration="16672000" />
     </task>
     <task id="LOCAL-00001" summary="added base for user">
       <option name="closed" value="true" />
@@ -132,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1702406436900</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added button to return login">
+      <option name="closed" value="true" />
+      <created>1702407588118</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702407588118</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +183,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="semestralne zadanie" />
     <MESSAGE value="added base for user" />
-    <option name="LAST_COMMIT_MESSAGE" value="added base for user" />
+    <MESSAGE value="added button to return login" />
+    <option name="LAST_COMMIT_MESSAGE" value="added button to return login" />
   </component>
 </project>
