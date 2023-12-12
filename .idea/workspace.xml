@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8a5a3a1-911b-4f6a-8899-0dbb87064242" name="Changes" comment="admin can take books from table&#10; and i return in this project">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/MyLibraryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/myLibrary.fxml" afterDir="false" />
+    <list default="true" id="b8a5a3a1-911b-4f6a-8899-0dbb87064242" name="Changes" comment="added base for user">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/logIn.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AllClasses/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllClasses/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AllClasses/buttonHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllClasses/buttonsImages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/AddNewBookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/AddNewBookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeControllerForUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeControllerForUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/DataBaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/DataBaseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksControllerForUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksControllerForUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/MyLibraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/MyLibraryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/SignUpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/app.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/appForUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/appForUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/signUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/signUp.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,24 +35,10 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="test" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;danil250405&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="c9416c6f-0678-46ed-ad76-9607adb714c9" />
-        <option name="url" value="https://github.com/danil250405/semestralneJava.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -67,7 +58,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "test2",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/danil/Desktop/SceneBuilder.lnk",
+    "last_opened_file_path": "C:/Users/danil/IdeaProjects/semestralneJava/src/main/resources/com/example/semestralnejava",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,7 +67,6 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.3816092",
-    "settings.editor.selected.configurable": "preferences.JavaFX",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -87,10 +77,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danil\IdeaProjects\semestralneJava\src\main\resources\com\example\semestralnejava" />
       <recent name="C:\Users\danil\OneDrive\Рабочий стол\studium\javaProjects\semestralneJava\src\main\java\assets" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HelloApplication">
+  <component name="RunManager">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.semestralnejava.HelloApplication" />
       <module name="semestralneJava" />
@@ -104,23 +95,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="database.Server" />
-      <module name="semestralneJava" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="database.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.HelloApplication" />
-        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -143,62 +120,19 @@
       <workItem from="1700841640740" duration="682000" />
       <workItem from="1700926285399" duration="904000" />
       <workItem from="1700927362475" duration="1344000" />
-      <workItem from="1701010635416" duration="7911000" />
-      <workItem from="1701163399260" duration="35159000" />
-      <workItem from="1701256836284" duration="22839000" />
-      <workItem from="1701463280046" duration="1891000" />
-      <workItem from="1702384263411" duration="757000" />
-      <workItem from="1702385034777" duration="14770000" />
+      <workItem from="1701010635416" duration="929000" />
+      <workItem from="1702403746507" duration="56000" />
+      <workItem from="1702403824332" duration="3669000" />
     </task>
-    <task id="LOCAL-00001" summary="semestralne zadanie">
+    <task id="LOCAL-00001" summary="added base for user">
       <option name="closed" value="true" />
-      <created>1701012694980</created>
+      <created>1702406436900</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1701012694980</updated>
+      <updated>1702406436900</updated>
     </task>
-    <task id="LOCAL-00002" summary="semestralne zadanie">
-      <option name="closed" value="true" />
-      <created>1701015338637</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1701015338637</updated>
-    </task>
-    <task id="LOCAL-00003" summary="add book table">
-      <option name="closed" value="true" />
-      <created>1701200546928</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1701200546928</updated>
-    </task>
-    <task id="LOCAL-00004" summary="add book table">
-      <option name="closed" value="true" />
-      <created>1701200593517</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1701200593517</updated>
-    </task>
-    <task id="LOCAL-00005" summary="admin can take books from table">
-      <option name="closed" value="true" />
-      <created>1701212269911</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1701212269911</updated>
-    </task>
-    <task id="LOCAL-00006" summary="admin can take books from table&#10; and i return in this project">
-      <option name="closed" value="true" />
-      <created>1702385280296</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1702385280296</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,13 +166,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="semestralne zadanie" />
-    <MESSAGE value="add book table" />
-    <MESSAGE value="admin can take books from table" />
-    <MESSAGE value="admin can take books from table&#10; and i return in this project" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin can take books from table&#10; and i return in this project" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <MESSAGE value="added base for user" />
+    <option name="LAST_COMMIT_MESSAGE" value="added base for user" />
   </component>
 </project>

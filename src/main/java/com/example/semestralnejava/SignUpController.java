@@ -2,9 +2,11 @@ package com.example.semestralnejava;
 
 import AllClasses.User;
 
+import AllClasses.buttonsImages;
 import database.DataBaseHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 
 import java.net.URL;
 import java.sql.ResultSet;
@@ -19,6 +21,8 @@ public class SignUpController {
     @FXML
     private URL location;
 
+    @FXML
+    private ImageView imageButtonLogIn;
     @FXML
     private ToggleGroup gender;
 
@@ -55,7 +59,9 @@ public class SignUpController {
     @FXML
     void initialize() {
 
-
+        imageButtonLogIn.setOnMouseClicked(event->{
+            buttonsImages.buttonReturnToLogInPressed(imageButtonLogIn);
+        });
         signUpButton.setOnAction(event ->{
             signUpNewUser();
         });

@@ -9,7 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 
-public class HomeController {
+public class HomeControllerForUser {
 
     @FXML
     private ResourceBundle resources;
@@ -18,9 +18,6 @@ public class HomeController {
     private ImageView imageButtonLogIn;
     @FXML
     private URL location;
-
-    @FXML
-    private Button addNewBookBtn;
 
     @FXML
     private Button myLibraryBtn;
@@ -39,12 +36,11 @@ public class HomeController {
         imageButtonHome.setOnMouseClicked(event ->{
             buttonsImages.buttonHomePressed(imageButtonHome);
         });
-        addNewBookBtn.setOnAction(event ->{
-            System.out.println("qwerty");
-            WindowManager.showWindow("addNewBookApp.fxml", addNewBookBtn);
-        });
+
         showAllBookBtn.setOnAction(event->{
+            if (Controller.authorizedUser.getUsername().equals("admin"))
             WindowManager.showWindow("LibraryBooksApp.fxml", showAllBookBtn);
+            else WindowManager.showWindow("LibraryBooksAppForUser.fxml", showAllBookBtn);
             //  dataBaseHandler.refreshBooksId();
         });
         myLibraryBtn.setOnAction(event ->{

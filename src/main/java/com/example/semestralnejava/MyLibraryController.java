@@ -6,7 +6,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import AllClasses.Book;
-import AllClasses.buttonHome;
+import AllClasses.buttonsImages;
 import database.DataBaseHandler;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -63,7 +63,7 @@ public class MyLibraryController extends Controller {
         //System.out.println(getAuthorizedUser().getUserId());
         //DataBaseHandler dataBaseHandler = new DataBaseHandler();
         imageButtonHome.setOnMouseClicked(event ->{
-            buttonHome.buttonHomePressed(imageButtonHome);
+            buttonsImages.buttonHomePressed(imageButtonHome);
         });
         addBooksInList();
 deleteBookBtn.setOnAction(event->{

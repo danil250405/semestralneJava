@@ -36,5 +36,10 @@
         <ImageView fx:id="imageButtonHome" fitHeight="71.0" fitWidth="71.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@home_icon.png" />
         </ImageView>
+      <ImageView fx:id="imageButtonLogIn" fitHeight="50.0" fitWidth="59.0" layoutX="636.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@logIn.png" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>

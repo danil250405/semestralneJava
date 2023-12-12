@@ -36,13 +36,12 @@ public class Controller {
 
 
 
+
     @FXML
     void initialize() throws SQLException, ClassNotFoundException {
         //button for log in
         loginSignUpButton.setOnAction(event->{
             WindowManager.showWindow("signUp.fxml" , loginSignUpButton);
-
-
         });
 
         //button for sign in
@@ -58,9 +57,6 @@ public class Controller {
               }
           }
           else System.out.println("Login or Pass is Empty");
-
-
-
       });
        System.out.println(authorizedUser.getEmail());
     }
@@ -88,7 +84,9 @@ public class Controller {
         }
         if(counter == 1){
             System.out.println("Successful");
+            if (authorizedUser.getUsername().equals("admin"))
             WindowManager.showWindow("app.fxml", authSignInButton);
+            else WindowManager.showWindow("appForUser.fxml", authSignInButton);
            // setAuthorizedUser(authorizedUser);
            // System.out.println(authorizedUser.getUsername());
             }

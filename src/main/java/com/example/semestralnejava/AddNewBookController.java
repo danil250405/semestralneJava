@@ -2,7 +2,7 @@ package com.example.semestralnejava;
 
 import database.DataBaseHandler;
 import AllClasses.Book;
-import AllClasses.buttonHome;
+import AllClasses.buttonsImages;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -44,7 +44,7 @@ public class AddNewBookController {
 
         imageButtonHome.setOnMouseClicked(event ->{
             DataBaseHandler dataBaseHandler = new DataBaseHandler();
-            buttonHome.buttonHomePressed(imageButtonHome);
+            buttonsImages.buttonHomePressed(imageButtonHome);
 
         });
                 //allow for user only number in field year
