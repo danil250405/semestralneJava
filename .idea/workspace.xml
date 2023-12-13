@@ -10,22 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8a5a3a1-911b-4f6a-8899-0dbb87064242" name="Changes" comment="added button to return login">
-      <change afterPath="$PROJECT_DIR$/bookshelf_icon-icons.com_54414.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/documentation.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/AddNewBookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/AddNewBookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/AllUsersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/AllUsersController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bookshelf_icon-icons.com_54414.ico" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeControllerForUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeControllerForUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksControllerForUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksControllerForUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/MyLibraryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/MyLibraryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/SignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/allUsers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/allUsers.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/img/pngegg.png" beforeDir="false" afterPath="$PROJECT_DIR$/pngegg.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +84,11 @@
       <recent name="C:\Users\danil\IdeaProjects\semestralneJava\src\main\resources\com\example\semestralnejava" />
       <recent name="C:\Users\danil\OneDrive\Рабочий стол\studium\javaProjects\semestralneJava\src\main\java\assets" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\danil\IdeaProjects\semestralneJava" />
+      <recent name="C:\Users\danil\IdeaProjects\semestralneJava\src" />
+      <recent name="C:\Users\danil\IdeaProjects\semestralneJava\src\main\java\com\example\semestralnejava" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.HelloApplication">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -155,7 +148,7 @@
       <workItem from="1702403746507" duration="56000" />
       <workItem from="1702403824332" duration="16672000" />
       <workItem from="1702474279605" duration="7471000" />
-      <workItem from="1702490932346" duration="3539000" />
+      <workItem from="1702490932346" duration="7027000" />
     </task>
     <task id="LOCAL-00001" summary="added base for user">
       <option name="closed" value="true" />
