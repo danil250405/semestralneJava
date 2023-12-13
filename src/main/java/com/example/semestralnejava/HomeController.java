@@ -1,6 +1,7 @@
 package com.example.semestralnejava;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import AllClasses.buttonsImages;
@@ -15,6 +16,11 @@ import javafx.scene.shape.SVGPath;
 public class HomeController {
     @FXML
     private Button allUsersBtn;
+    @FXML
+    private Label countBooksLabel;
+
+    @FXML
+    private Label countUserLabel;
 
     @FXML
     private AnchorPane side_ankerpane;
@@ -40,12 +46,18 @@ public class HomeController {
     private Button showAllBookBtn;
     DataBaseHandler dataBaseHandler = new DataBaseHandler();
     @FXML
-    void initialize() {
+    void initialize() throws SQLException, ClassNotFoundException {
       imageButtonLogInSvg.setOnMouseClicked(event->{
             buttonsImages.buttonReturnToLogInPressed(librarynewgen);
         });
+
+        countBooksLabel.setText(String.valueOf(dataBaseHandler.getCountFromBooks()));
+      countUserLabel.setText(String.valueOf(dataBaseHandler.getCountFromUsers()));
         imageButtonHomeSvg.setOnMouseClicked(event ->{
             buttonsImages.buttonHomePressed(librarynewgen);
+        });
+        allUsersBtn.setOnAction(event->{
+            WindowManager.showWindow("allUsers.fxml", addNewBookBtn);
         });
         addNewBookBtn.setOnAction(event ->{
             System.out.println("qwerty");

@@ -5,29 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8a5a3a1-911b-4f6a-8899-0dbb87064242" name="Changes" comment="added button to return login">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/img/icons8-admin-100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/img/icons8-author-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/img/icons8-book-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/img/icons8-date-100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/img/icons8-enjoy-64.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/img/icons8-heart-100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/img/icons8-heart-96.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/img/icons8-library-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/img/icons8-plus-50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/img/icons8-stripped-patterns-2-500.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/img/icons8-strong-80.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/img/icons8-title-100.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/img/icons8-users-30.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_12_2023_18_54__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_12_2023_18_54__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/AllUsersController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/allUsers.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/semestralnejava/LibraryBooksController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/database/DataBaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/DataBaseHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/LibraryBooksApp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/LibraryBooksApp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/Style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/addNewBookApp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/addNewBookApp.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/app.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/app.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/myLibrary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/semestralnejava/myLibrary.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
