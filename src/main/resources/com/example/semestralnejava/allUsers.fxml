@@ -26,8 +26,8 @@
                         <TableColumn fx:id="columnLastNameUser" prefWidth="124.0" styleClass="col1" text="Last Name" />
                         <TableColumn fx:id="columnUsernameUser" prefWidth="117.5999755859375" styleClass="col2" text="Username" />
                         <TableColumn fx:id="columnPasswordUser" prefWidth="112.79995727539062" styleClass="col1" text="Password" />
-                  <TableColumn fx:id="columnEmailUser" prefWidth="124.800048828125" text="Email" />
-                  <TableColumn fx:id="columnGenderUser" prefWidth="64.0001220703125" text="gender" />
+                  <TableColumn fx:id="columnEmailUser" prefWidth="124.800048828125" styleClass="col2" text="Email" />
+                  <TableColumn fx:id="columnGenderUser" prefWidth="64.0001220703125" styleClass="col1" text="gender" />
                     </columns>
                 </TableView>
                 <Label layoutX="45.0" layoutY="256.0" text="Enter user id which you want">
