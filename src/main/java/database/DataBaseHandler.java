@@ -154,8 +154,7 @@ public class DataBaseHandler extends Configs {
         }
     }
     public boolean deleteRowFromBooksTable(int rowIdDelete) {
-        String sqlDelete = "DELETE FROM books WHERE " + ConstForBooks.BOOK_ID + " = " + rowIdDelete +
-                            " AND " + ConstForBooks.ID_USER + " = 0";
+        String sqlDelete = "DELETE FROM books WHERE " + ConstForBooks.BOOK_ID + " = " + rowIdDelete;
 
         // Подготавливаем SQL-запрос для удаления
         try (PreparedStatement deleteStatement = dbConnection.prepareStatement(sqlDelete)) {

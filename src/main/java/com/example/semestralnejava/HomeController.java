@@ -9,10 +9,15 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.SVGPath;
 
 public class HomeController {
+    @FXML
+    private Button allUsersBtn;
 
+    @FXML
+    private AnchorPane side_ankerpane;
     @FXML
     private ResourceBundle resources;
 

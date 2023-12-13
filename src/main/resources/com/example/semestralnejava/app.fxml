@@ -2,7 +2,11 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
@@ -10,21 +14,148 @@
     <children>
         <AnchorPane layoutX="-4.0" layoutY="108.0" prefHeight="303.0" prefWidth="707.0" style="-fx-background-color: #fafafa;">
          <children>
-            <Button fx:id="showAllBookBtn" layoutX="240.0" layoutY="28.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="202.0" styleClass="buttonStyle" stylesheets="@Style.css" text="show all books" textFill="WHITE">
-               <font>
-                  <Font name="Monotype Corsiva" size="23.0" />
-               </font>
-            </Button>
-            <Button fx:id="addNewBookBtn" layoutX="240.0" layoutY="172.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="202.0" styleClass="buttonStyle" stylesheets="@Style.css" text="add new book" textFill="WHITE">
-               <font>
-                  <Font name="Monotype Corsiva" size="23.0" />
-               </font>
-            </Button>
-            <Button fx:id="myLibraryBtn" layoutX="240.0" layoutY="101.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="202.0" styleClass="buttonStyle" stylesheets="@Style.css" text="my library" textFill="WHITE">
-               <font>
-                  <Font name="Monotype Corsiva" size="23.0" />
-               </font>
-            </Button>
+            <VBox layoutX="-36.0" layoutY="-1.0" prefHeight="306.0" prefWidth="322.0">
+               <children>
+                  <AnchorPane fx:id="side_ankerpane" prefHeight="306.0" prefWidth="256.0" styleClass="sideAnkerPane" stylesheets="@Style.css">
+                     <children>
+                        <Button fx:id="showAllBookBtn" layoutX="45.0" layoutY="31.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="266.0" styleClass="buttonStyle" stylesheets="@Style.css" text="Show all books" textAlignment="RIGHT" textFill="WHITE">
+                           <font>
+                              <Font name="Monotype Corsiva" size="23.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/icons8-library-50.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="myLibraryBtn" layoutX="45.0" layoutY="102.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="266.0" styleClass="buttonStyle" stylesheets="@Style.css" text="My library" textFill="WHITE">
+                           <font>
+                              <Font name="Monotype Corsiva" size="23.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/icons8-book-50.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="addNewBookBtn" layoutX="45.0" layoutY="166.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="266.0" styleClass="buttonStyle" stylesheets="@Style.css" text="Add new book" textFill="WHITE">
+                           <font>
+                              <Font name="Monotype Corsiva" size="23.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/icons8-plus-50.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="allUsersBtn" layoutX="45.0" layoutY="227.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="266.0" styleClass="buttonStyle" stylesheets="@Style.css" text="All users" textFill="WHITE">
+                           <font>
+                              <Font name="Monotype Corsiva" size="23.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="49.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/icons8-users-30.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <Pane layoutX="308.0" layoutY="14.0" prefHeight="126.0" prefWidth="126.0" styleClass="pane1" stylesheets="@Style.css">
+               <children>
+                  <Label layoutX="6.0" layoutY="14.0" prefHeight="28.0" prefWidth="99.0" text="Our users:">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="63.0" prefHeight="21.0" prefWidth="37.0" text="123">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="49.0" fitWidth="49.0" layoutX="55.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/icons8-heart-96.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="498.0" layoutY="14.0" prefHeight="126.0" prefWidth="126.0" styleClass="pane2" stylesheets="@Style.css">
+               <children>
+                  <Label layoutX="7.0" layoutY="14.0" prefHeight="28.0" prefWidth="115.0" text="In our library:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="65.0" layoutY="50.0" prefHeight="21.0" prefWidth="37.0" text="123" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="63.0" layoutY="83.0" prefHeight="27.0" prefWidth="63.0" text="books" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="39.0" fitWidth="49.0" layoutX="14.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/icons8-strong-80.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="498.0" layoutY="165.0" prefHeight="126.0" prefWidth="126.0" styleClass="pane1" stylesheets="@Style.css">
+               <children>
+                  <Label layoutX="7.0" layoutY="6.0" prefHeight="28.0" prefWidth="99.0" text="Enjoy your">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="73.0" layoutY="34.0" prefHeight="28.0" prefWidth="39.0" text=" use">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="64.0" fitWidth="85.0" layoutX="7.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/icons8-enjoy-64.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="308.0" layoutY="165.0" prefHeight="126.0" prefWidth="126.0" styleClass="pane2" stylesheets="@Style.css">
+               <children>
+                  <Label layoutX="6.0" layoutY="7.0" prefHeight="28.0" prefWidth="99.0" text="You are " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="27.0" layoutY="35.0" prefHeight="28.0" prefWidth="99.0" text=" logged in" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="6.0" layoutY="63.0" prefHeight="28.0" prefWidth="99.0" text="as admin" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="19.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="49.0" fitWidth="56.0" layoutX="77.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/icons8-admin-100.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
          </children>
         </AnchorPane>
       <Label fx:id="librarynewgen" layoutX="177.0" layoutY="36.0" prefHeight="71.0" prefWidth="345.0" text="LibraryNewGen" textAlignment="CENTER" textFill="WHITE">
