@@ -16,6 +16,7 @@ import javafx.scene.shape.SVGPath;
 public class HomeController {
     @FXML
     private Button allUsersBtn;
+
     @FXML
     private Label countBooksLabel;
 
@@ -24,11 +25,13 @@ public class HomeController {
 
     @FXML
     private AnchorPane side_ankerpane;
+
     @FXML
     private ResourceBundle resources;
 
     @FXML
     private SVGPath imageButtonLogInSvg;
+
     @FXML
     private URL location;
 
@@ -37,40 +40,54 @@ public class HomeController {
 
     @FXML
     private Button myLibraryBtn;
+
     @FXML
     private Label librarynewgen;
+
     @FXML
     private SVGPath imageButtonHomeSvg;
 
     @FXML
     private Button showAllBookBtn;
+
+    // Database handler instance
     DataBaseHandler dataBaseHandler = new DataBaseHandler();
+
     @FXML
     void initialize() throws SQLException, ClassNotFoundException {
-      imageButtonLogInSvg.setOnMouseClicked(event->{
+        // Event handler for the "Log In" button
+        imageButtonLogInSvg.setOnMouseClicked(event -> {
             buttonsImages.buttonReturnToLogInPressed(librarynewgen);
         });
 
+        // Display the count of books and users in the labels
         countBooksLabel.setText(String.valueOf(dataBaseHandler.getCountFromBooks()));
-      countUserLabel.setText(String.valueOf(dataBaseHandler.getCountFromUsers()));
-        imageButtonHomeSvg.setOnMouseClicked(event ->{
+        countUserLabel.setText(String.valueOf(dataBaseHandler.getCountFromUsers()));
+
+        // Event handler for the "Home" button
+        imageButtonHomeSvg.setOnMouseClicked(event -> {
             buttonsImages.buttonHomePressed(librarynewgen);
         });
-        allUsersBtn.setOnAction(event->{
+
+        // Event handler for the "All Users" button
+        allUsersBtn.setOnAction(event -> {
             WindowManager.showWindow("allUsers.fxml", addNewBookBtn);
         });
-        addNewBookBtn.setOnAction(event ->{
+
+        // Event handler for the "Add New Book" button
+        addNewBookBtn.setOnAction(event -> {
             System.out.println("qwerty");
             WindowManager.showWindow("addNewBookApp.fxml", addNewBookBtn);
         });
-        showAllBookBtn.setOnAction(event->{
+
+        // Event handler for the "Show All Books" button
+        showAllBookBtn.setOnAction(event -> {
             WindowManager.showWindow("LibraryBooksApp.fxml", showAllBookBtn);
-            //  dataBaseHandler.refreshBooksId();
         });
-        myLibraryBtn.setOnAction(event ->{
+
+        // Event handler for the "My Library" button
+        myLibraryBtn.setOnAction(event -> {
             WindowManager.showWindow("myLibrary.fxml", showAllBookBtn);
         });
-
     }
-
 }

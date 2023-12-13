@@ -1,0 +1,83 @@
+Project Title: Library Management System
+
+Project Description: This project is a library management system that allows users to manage books, borrowers, and other library resources. Users can add new books to the library, view existing books, and check books out to borrowers. Borrowers can view their borrowing history, renew books, and return books to the library. The system also allows library staff to manage borrowers, view borrowing history, and generate reports.
+
+Project Goals: The goals of this project are to provide a user-friendly interface for managing library resources, provide a secure system for managing borrowers and books, and provide library staff with tools for managing the library and generating reports.
+
+Project Features:
+
+User Management: Users can register as borrowers or library staff, and have different levels of access to different features of the system.
+
+Book Management: Users can add new books to the library, view existing books, and check books out to borrowers.
+
+Borrower Management: Borrowers can view their borrowing history, renew books, and return books to the library.
+
+Library Staff Management: Library staff can manage borrowers, view borrowing history, and generate reports.
+
+Reporting: Library staff can generate reports on book borrowing and return history, and other library statistics.
+
+Security: The system uses secure encryption and authentication to protect user data and prevent unauthorized access.
+
+Technologies Used:
+
+JavaFX: JavaFX is used for building the user interface of the application.
+
+Java: Java is used for developing the backend of the application.
+
+MySQL: MySQL is used as the database for storing user data and book information.
+
+Maven: Maven is used for managing dependencies and building the project.
+
+Project Structure:
+
+The project is structured into several modules, including a frontend module for the user interface, a backend module for the business logic, and a database module for storing user data and book information.
+
+The frontend module contains JavaFX code for building the user interface, including FXML files for defining the layout of the UI, and Java code for handling user interactions with the UI.
+
+The backend module contains Java code for handling business logic, including managing user authentication, book management, and database interactions.
+
+The database module contains MySQL scripts for creating the database schema and populating it with sample data.
+
+Installation and Setup:
+
+To install and set up the project, follow these steps:
+
+1.
+Install Java and MySQL on your development machine.
+2.
+Clone the project from GitHub.
+3.
+Open the project in your IDE of choice (e.g., IntelliJ IDEA, Eclipse).
+4.
+Import the project into your IDE as a Maven project.
+5.
+Set up the MySQL database by running the SQL scripts in the database module.
+6.
+Run the project and test the functionality.
+
+
+Usage:
+
+To use the project, follow these steps:
+
+1.
+Register as a borrower or library staff.
+2.
+Use the user interface to add new books, check books out to borrowers, and manage borrowers and library staff.
+3.
+Use the reporting tools to generate reports on book borrowing and return history, and other library statistics.
+
+
+Contribution:
+
+Contributions to the project are welcome. Please fork the project on GitHub, make your changes, and create a pull request to merge your changes back into the main project.
+
+License:
+
+The project is licensed under the MIT License. This means that anyone can use, modify, and distribute the project as long as they provide attribution to the original authors.
+
+Acknowledgements:
+
+Thanks to all the open-source libraries and frameworks that made this project possible, including Java, JavaFX, MySQL, Maven, and others.
+
+I hope this documentation helps you understand the project and its features.

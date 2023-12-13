@@ -55,70 +55,80 @@ public class MyLibraryController extends Controller {
 
     @FXML
     private SVGPath imageButtonHomeSvg;
+
+    // Database handler instance
     DataBaseHandler dataBaseHandler = new DataBaseHandler();
+
+    // Observable list to store books for the table view
     private final ObservableList<Book> bookList = FXCollections.observableArrayList();
 
     @FXML
     private Label librarynewgen;
+
     @FXML
     void initialize() throws SQLException, ClassNotFoundException {
         System.out.println(Controller.authorizedUser.getUserId());
-        DataBaseHandler dataBaseHandler = new DataBaseHandler();
-        imageButtonHomeSvg.setOnMouseClicked(event ->{
+
+        // Event handler for the "Home" button
+        imageButtonHomeSvg.setOnMouseClicked(event -> {
             buttonsImages.buttonHomePressed(librarynewgen);
         });
+
+        // Populate the table with books from the user's library
         addBooksInList();
-deleteBookBtn.setOnAction(event->{
-    try {
-        deletebook();
-    } catch (SQLException e) {
-        throw new RuntimeException(e);
-    } catch (ClassNotFoundException e) {
-        throw new RuntimeException(e);
-    }
-});
+
+        // Event handler for the "Delete Book" button
+        deleteBookBtn.setOnAction(event -> {
+            try {
+                deletebook();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
+    // Method to delete a book from the user's library
     private void deletebook() throws SQLException, ClassNotFoundException {
         int idBookWhichYouWant = Integer.parseInt(bookIdWchichYouWantTextField.getText().trim());
 
         System.out.println(idBookWhichYouWant);
 
-       // Book book = dataBaseHandler.getBookById(idBookWhichYouWant);
-        if (  dataBaseHandler.deleteBookFromUserLibrary(idBookWhichYouWant)){
-            hideLabel.setText("Book deleted susccseful");
+        // Check if the book was successfully deleted
+        if (dataBaseHandler.deleteBookFromUserLibrary(idBookWhichYouWant)) {
+            hideLabel.setText("Book deleted successfully");
             hideLabel.setTextFill(Color.GREEN);
+
+            // Clear the list and refresh the table
             fullTable.getItems().clear();
             addBooksInList();
             fullTable.refresh();
-        }
-
-        else
-        {
-
-            hideLabel.setText("You can`t do it");
+        } else {
+            hideLabel.setText("You can't do it");
             hideLabel.setTextFill(Color.RED);
         }
     }
 
+    // Method to add books from the user's library to the observable list for the table view
     private void addBooksInList() throws SQLException, ClassNotFoundException {
-        columnIdBook.setCellValueFactory(new PropertyValueFactory<Book, Integer>("bookId"));
-        columnNameBook.setCellValueFactory(new PropertyValueFactory<Book, String>("bookName"));
-        columnAuthorBook.setCellValueFactory(new PropertyValueFactory<Book, String>("bookAuthor"));
-        columnYearBook.setCellValueFactory(new PropertyValueFactory<Book, Integer>("bookYear"));
+        columnIdBook.setCellValueFactory(new PropertyValueFactory<>("bookId"));
+        columnNameBook.setCellValueFactory(new PropertyValueFactory<>("bookName"));
+        columnAuthorBook.setCellValueFactory(new PropertyValueFactory<>("bookAuthor"));
+        columnYearBook.setCellValueFactory(new PropertyValueFactory<>("bookYear"));
 
-        System.out.println();
         ResultSet books = dataBaseHandler.getAllBooks();
-        System.out.println(books);
-        boolean opportunityToBorrowABook = false;
-        String location;
+        boolean opportunityToBorrowABook;
+
+        // Iterate through the ResultSet and add books to the list for the current user
         while (books.next()) {
             if (books.getInt(5) == 0) {
                 opportunityToBorrowABook = true;
-            }
-            else {
+            } else {
                 opportunityToBorrowABook = false;
             }
+
+            // Check if the book belongs to the current user
             if (authorizedUser.getUserId() == (books.getInt(5))) {
                 Book book = new Book(books.getInt(1),
                         books.getString(2),
