@@ -101,6 +101,17 @@ public class DataBaseHandler extends Configs {
 
         return resSet;
     }
+    public ResultSet getAllUsers() throws SQLException, ClassNotFoundException {
+        ResultSet resSet = null;
+        String select = "SELECT * FROM users";
+
+        PreparedStatement prSt = null;
+        prSt =getDbConnection().prepareStatement(select);
+        resSet = prSt.executeQuery();
+
+
+        return resSet;
+    }
 
     public boolean setNewUserIdForBook(int bookId, int newUserId, String newUsername) throws SQLException, ClassNotFoundException {
         String updateQuery = "UPDATE " + ConstForBooks.BOOK_TABLE +
@@ -190,6 +201,50 @@ public class DataBaseHandler extends Configs {
 
 
 
+    }
+    public boolean deleteRowFromUsersTable(int rowIdDelete) {
+
+        String sqlDelete = "DELETE FROM users WHERE " + ConstForUsers.USERS_ID + " = " + rowIdDelete;
+
+        // Подготавливаем SQL-запрос для удаления
+        try (PreparedStatement deleteStatement = dbConnection.prepareStatement(sqlDelete)) {
+            // Выполняем запрос на удаление
+            int rowsAffected = deleteStatement.executeUpdate();
+            // Выводим результат удаления
+            System.out.println("Количество удаленных строк: " + rowsAffected);
+            System.out.println("Номер удаленоой строки: " + rowIdDelete);
+            if (rowsAffected > 0) {
+                return true; // Успешное удаление
+            } else {
+                return false; // Ничего не было удалено
+            }
+        } catch (SQLException ex) {
+
+            throw new RuntimeException("this user is not exist or he took book", ex);
+
+        }
+
+
+
+    }
+    public boolean posibilityDeleteUser(int userId) throws SQLException, ClassNotFoundException {
+        String select = "SELECT * FROM books WHERE " + ConstForBooks.ID_USER + "=?";
+        try (PreparedStatement prSt = getDbConnection().prepareStatement(select)) {
+            prSt.setInt(1, userId);
+
+            try (ResultSet resultSet = prSt.executeQuery()) {
+                if (resultSet.next()) {
+                    // Запись найдена
+                    return true;
+                } else {
+                    // Запись не найдена
+                    return false;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Обработка исключений, если необходимо
+            return false; // В случае ошибки, также можно вернуть 0 или другое значение по умолчанию
+        }
     }
     public void refreshBooksId() {
         // Обнуляем счетчик

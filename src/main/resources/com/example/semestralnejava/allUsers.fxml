@@ -14,7 +14,7 @@
     <children>
         <AnchorPane layoutX="-1.0" layoutY="108.0" prefHeight="303.0" prefWidth="707.0" style="-fx-background-color: #fafafa;">
             <children>
-                <Label fx:id="hideLabel" layoutX="572.0" layoutY="234.0" prefHeight="37.0" prefWidth="134.0">
+                <Label fx:id="hideLabel" layoutX="354.0" layoutY="206.0" prefHeight="38.0" prefWidth="257.0">
                     <font>
                         <Font size="15.0" />
                     </font>
@@ -30,13 +30,13 @@
                   <TableColumn fx:id="columnGenderUser" prefWidth="64.0001220703125" text="gender" />
                     </columns>
                 </TableView>
-                <Label layoutX="46.0" layoutY="243.0" text="Enter user id which you want">
+                <Label layoutX="45.0" layoutY="256.0" text="Enter user id which you want">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </Label>
-                <TextField fx:id="userIdWchichYouWantTextField" layoutX="253.0" layoutY="240.0" prefHeight="26.0" prefWidth="71.0" />
-                <Button fx:id="deleteUserbtn" layoutX="354.0" layoutY="231.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" styleClass="buttonStyle" stylesheets="@Style.css" text="delete user" textFill="WHITE">
+                <TextField fx:id="userIdWchichYouWantTextField" layoutX="252.0" layoutY="253.0" prefHeight="26.0" prefWidth="71.0" />
+                <Button fx:id="deleteUserbtn" layoutX="353.0" layoutY="244.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" styleClass="buttonStyle" stylesheets="@Style.css" text="delete user" textFill="WHITE">
                     <font>
                         <Font size="16.0" />
                     </font>

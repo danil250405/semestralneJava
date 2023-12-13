@@ -1,6 +1,7 @@
 package com.example.semestralnejava;
 
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 import AllClasses.buttonsImages;
@@ -31,12 +32,16 @@ public class HomeControllerForUser {
     @FXML
     private Button myLibraryBtn;
 
+    @FXML
+    private Label countBooksLabel;
 
+    @FXML
+    private Label countUserLabel;
     @FXML
     private Button showAllBookBtn;
     DataBaseHandler dataBaseHandler = new DataBaseHandler();
     @FXML
-    void initialize() {
+    void initialize() throws SQLException, ClassNotFoundException {
 
         imageButtonLogInSvg.setOnMouseClicked(event->{
             buttonsImages.buttonReturnToLogInPressed(librarynewgen);
@@ -44,7 +49,8 @@ public class HomeControllerForUser {
         imageButtonHomeSvg.setOnMouseClicked(event ->{
             buttonsImages.buttonHomePressed(librarynewgen);
         });
-
+        countBooksLabel.setText(String.valueOf(dataBaseHandler.getCountFromBooks()));
+        countUserLabel.setText(String.valueOf(dataBaseHandler.getCountFromUsers()));
         showAllBookBtn.setOnAction(event->{
             if (Controller.authorizedUser.getUsername().equals("admin"))
             WindowManager.showWindow("LibraryBooksApp.fxml", showAllBookBtn);

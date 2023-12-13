@@ -18,7 +18,15 @@ public class User {
         this.email = email;
         this.gender = gender;
     }
-
+    public User(int userId, String firstName, String lastName, String username, String password, String email, String gender) {
+        this.userId = userId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.gender = gender;
+    }
     public User() {}
 
     public String getFirstName() {
