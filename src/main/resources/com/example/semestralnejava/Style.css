@@ -3,25 +3,122 @@
 }
 
 .btnicon:hover{
-    -fx-fill: #F39C63;
+    -fx-fill: rgba(103, 128, 226, 0.99);
+
 }
 .btnicon:pressed {
-    -fx-fill: #f18242;
+    -fx-fill: #4d409f;
+
 }
 .buttonStyle {
-    -fx-background-color:  #F39C63;
+    -fx-background-color: #2E3348;
+    -fx-border-width:2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
     -fx-text-fill: #f1f1f1;
-    -fx-background-radius: 5;
-    -fx-border-radius: 5;
-    -fx-padding: 8 15; /* Подстройте отступы в зависимости от вашего предпочтения */
+
+
 }
 
+.col1{
+    -fx-background-color: #601cd5;
+
+    -fx-text-fill: #ffffff;
+}
+.col2{
+    -fx-background-color: #4d409f;
+
+    -fx-text-fill: #ffffff;
+}
+.fullTable .column-footer{
+    -fx-background-radius: 0 0 0 14 14;
+}
+.fullTable .column-header{
+    -fx-background-color:  #2E3348;
+}
+
+.fullTable .column-header .label{
+    -fx-text-fill: #f1f1f1;
+}
+
+.fullTable .cell {
+    -fx-border-color: #464267;
+    -fx-border-width: 0 0 1 1; /* Толщина границы только снизу */
+}
+
+
+
+
+
+.pane1{
+    -fx-background-color: rgba(103, 128, 226, 0.99);
+    -fx-border-color: #000000;
+    -fx-border-width:2px 2px 2px 2px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-border-style: solid;
+    -fx-text-fill: #000000;
+}
+.pane2{
+    -fx-background-color: rgb(77, 64, 159);
+    -fx-border-color: #000000;
+    -fx-border-width:2px 2px 2px 2px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-border-style: solid;
+    -fx-text-fill: #000000;
+}
 .buttonStyle:hover {
-    -fx-background-color: #e09a0c;
-    -fx-text-fill:   #2E3348;
+    -fx-background-color: rgba(103, 128, 226, 0.99);
+    -fx-border-color: #000000;
+    -fx-border-width:2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+    -fx-text-fill: #000000;
 }
 
 .buttonStyle:pressed {
-    -fx-background-color: #d17f00; /* Цвет для нажатия, может быть темнее основного hover цвета */
+    -fx-background-color: #4d409f; /* Цвет для нажатия, может быть темнее основного hover цвета */
     -fx-text-fill: #ffffff; /* Белый цвет текста для нажатия, например */
+}
+.deleteUpBorder{
+    -fx-background-color:  #2E3348;
+}
+.sideAnkerPane{
+    -fx-background-color:  #2E3348;
+    -fx-border-color: #000000;
+    -fx-border-width:2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+}
+.textArea:focused{
+    -fx-text-fill: white;
+    -fx-background-color:  #2E3348;
+    -fx-border-color: #000000;
+    -fx-border-width:2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+
+}
+.textArea{
+    -fx-text-fill: white;
+    -fx-background-color:  #2E3348;
+    -fx-border-color: #08121f;
+    -fx-border-width:2px 2px 2px 2px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-style: solid;
+}
+.textArea:focused{
+    -fx-text-fill: white;
+    -fx-background-color:  #2E3348;
+    -fx-border-color: #000000;
+    -fx-border-width:2px 2px 2px 2px;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-border-style: solid;
+
 }

@@ -10,35 +10,37 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="701.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralnejava.LibraryBooksControllerForUser">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="701.0" style="-fx-background-color: #2E3348;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semestralnejava.AllUsersController">
     <children>
-        <AnchorPane layoutY="108.0" prefHeight="303.0" prefWidth="707.0" style="-fx-background-color: #fafafa;">
+        <AnchorPane layoutX="-1.0" layoutY="108.0" prefHeight="303.0" prefWidth="707.0" style="-fx-background-color: #fafafa;">
             <children>
-                <Label fx:id="hideLabel" layoutX="572.0" layoutY="234.0" prefHeight="37.0" prefWidth="134.0">
+                <Label fx:id="hideLabel" layoutX="354.0" layoutY="206.0" prefHeight="38.0" prefWidth="257.0">
                     <font>
                         <Font size="15.0" />
                     </font>
                 </Label>
-                <Button fx:id="addBookInYourLibraryBtn" layoutX="346.0" layoutY="232.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" styleClass="buttonStyle" stylesheets="@Style.css" text="add book in your library" textFill="WHITE">
-                    <font>
-                        <Font size="16.0" />
-                    </font>
-                </Button>
                 <TableView fx:id="fullTable" prefHeight="206.0" prefWidth="707.0" styleClass="fullTable" stylesheets="@Style.css">
                     <columns>
-                        <TableColumn fx:id="columnIdBook" prefWidth="51.19998013973236" styleClass="col1" text="Id" />
-                        <TableColumn fx:id="columnNameBook" prefWidth="155.19998931884766" styleClass="col2" text="Name" />
-                        <TableColumn fx:id="columnAuthorBook" prefWidth="173.5999755859375" styleClass="col1" text="Author" />
-                        <TableColumn fx:id="columnYearBook" prefWidth="138.39999389648438" styleClass="col2" text="Year of issue" />
-                        <TableColumn fx:id="columnLocationBook" prefWidth="180.79998779296875" styleClass="col1" text="Location" />
+                        <TableColumn fx:id="columnIdUser" prefWidth="43.19998013973236" styleClass="col1" text="Id" />
+                        <TableColumn fx:id="columnNameUser" prefWidth="114.4000015258789" styleClass="col2" text="Name" />
+                        <TableColumn fx:id="columnLastNameUser" prefWidth="124.0" styleClass="col1" text="Last Name" />
+                        <TableColumn fx:id="columnUsernameUser" prefWidth="117.5999755859375" styleClass="col2" text="Username" />
+                        <TableColumn fx:id="columnPasswordUser" prefWidth="112.79995727539062" styleClass="col1" text="Password" />
+                  <TableColumn fx:id="columnEmailUser" prefWidth="124.800048828125" text="Email" />
+                  <TableColumn fx:id="columnGenderUser" prefWidth="64.0001220703125" text="gender" />
                     </columns>
                 </TableView>
-                <Label layoutX="46.0" layoutY="243.0" text="Enter book id which you want">
+                <Label layoutX="45.0" layoutY="256.0" text="Enter user id which you want">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
                 </Label>
-                <TextField fx:id="bookIdWchichYouWantTextField" layoutX="253.0" layoutY="240.0" prefHeight="26.0" prefWidth="71.0" />
+                <TextField fx:id="userIdWchichYouWantTextField" layoutX="252.0" layoutY="253.0" prefHeight="26.0" prefWidth="71.0" />
+                <Button fx:id="deleteUserbtn" layoutX="353.0" layoutY="244.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="206.0" styleClass="buttonStyle" stylesheets="@Style.css" text="delete user" textFill="WHITE">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Button>
             </children>
         </AnchorPane>
         <Label fx:id="librarynewgen" layoutX="177.0" layoutY="36.0" prefHeight="71.0" prefWidth="345.0" text="LibraryNewGen" textAlignment="CENTER" textFill="WHITE">

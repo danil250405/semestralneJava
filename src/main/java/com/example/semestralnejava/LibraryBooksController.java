@@ -90,10 +90,10 @@ public class LibraryBooksController extends Controller{
     }
 
     private void deleteBook() throws SQLException, ClassNotFoundException {
-        int idBookWhichYouWant = Integer.parseInt(bookIdWchichYouWantTextField.getText().trim()) + 1;
+        int idBookWhichYouWant = Integer.parseInt(bookIdWchichYouWantTextField.getText().trim()) ;
         //Book book = bookList.get(idBookWhichYouWant);
         System.out.println(idBookWhichYouWant);
-        if ( dataBaseHandler.deleteRowFromBooksTable(idBookWhichYouWant -1)){
+        if ( dataBaseHandler.deleteRowFromBooksTable(idBookWhichYouWant )){
 
             //System.out.println(authorizedUser.getUsername());
            // book.setIduser(authorizedUser.getUserId());

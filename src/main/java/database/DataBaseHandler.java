@@ -101,6 +101,17 @@ public class DataBaseHandler extends Configs {
 
         return resSet;
     }
+    public ResultSet getAllUsers() throws SQLException, ClassNotFoundException {
+        ResultSet resSet = null;
+        String select = "SELECT * FROM users";
+
+        PreparedStatement prSt = null;
+        prSt =getDbConnection().prepareStatement(select);
+        resSet = prSt.executeQuery();
+
+
+        return resSet;
+    }
 
     public boolean setNewUserIdForBook(int bookId, int newUserId, String newUsername) throws SQLException, ClassNotFoundException {
         String updateQuery = "UPDATE " + ConstForBooks.BOOK_TABLE +
@@ -132,30 +143,43 @@ public class DataBaseHandler extends Configs {
 
     }
 
-    public int getCountFromBooks(){
+    public int getCountFromBooks() throws SQLException, ClassNotFoundException {
 
-        String sql = "SELECT COUNT(*) FROM books";
-        // Подготавливаем SQL-запрос
-        try (PreparedStatement preparedStatement = dbConnection.prepareStatement(sql)) {
-            // Выполняем запрос и получаем результат
-            try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                // Переходим к первой строке результата
-                resultSet.next();
+        ResultSet resSet = null;
+        String select = "SELECT COUNT(*) FROM books";
 
-                // Получаем значение из первой колонки (количество строк)
-                int rowCount = resultSet.getInt(1);
+        try (PreparedStatement prSt = getDbConnection().prepareStatement(select)) {
+            resSet = prSt.executeQuery();
 
-                // Выводим результат
-                System.out.println("Количество строк в таблице: " + rowCount);
-                return rowCount;
+            // Check if there are results
+            if (resSet.next()) {
+                // Get the value from the first column (count)
+                int result = resSet.getInt(1);
+                return result;
+            } else {
+                // Handle the case where there are no results
+                System.out.println("No results found.");
+                return -1;  // Or any other appropriate value
             }
-        } catch (SQLException ex) {
-            throw new RuntimeException(ex);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Handle the exception appropriately, log or rethrow
+            return -1;  // Or any other appropriate value
+        } finally {
+            // Close the ResultSet in the finally block to ensure it's always closed
+            if (resSet != null) {
+                try {
+                    resSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    // Handle the exception appropriately, log or rethrow
+                }
+            }
         }
+
     }
     public boolean deleteRowFromBooksTable(int rowIdDelete) {
-        String sqlDelete = "DELETE FROM books WHERE " + ConstForBooks.BOOK_ID + " = " + rowIdDelete +
-                            " AND " + ConstForBooks.ID_USER + " = 0";
+        String sqlDelete = "DELETE FROM books WHERE " + ConstForBooks.BOOK_ID + " = " + rowIdDelete;
 
         // Подготавливаем SQL-запрос для удаления
         try (PreparedStatement deleteStatement = dbConnection.prepareStatement(sqlDelete)) {
@@ -177,6 +201,50 @@ public class DataBaseHandler extends Configs {
 
 
 
+    }
+    public boolean deleteRowFromUsersTable(int rowIdDelete) {
+
+        String sqlDelete = "DELETE FROM users WHERE " + ConstForUsers.USERS_ID + " = " + rowIdDelete;
+
+        // Подготавливаем SQL-запрос для удаления
+        try (PreparedStatement deleteStatement = dbConnection.prepareStatement(sqlDelete)) {
+            // Выполняем запрос на удаление
+            int rowsAffected = deleteStatement.executeUpdate();
+            // Выводим результат удаления
+            System.out.println("Количество удаленных строк: " + rowsAffected);
+            System.out.println("Номер удаленоой строки: " + rowIdDelete);
+            if (rowsAffected > 0) {
+                return true; // Успешное удаление
+            } else {
+                return false; // Ничего не было удалено
+            }
+        } catch (SQLException ex) {
+
+            throw new RuntimeException("this user is not exist or he took book", ex);
+
+        }
+
+
+
+    }
+    public boolean posibilityDeleteUser(int userId) throws SQLException, ClassNotFoundException {
+        String select = "SELECT * FROM books WHERE " + ConstForBooks.ID_USER + "=?";
+        try (PreparedStatement prSt = getDbConnection().prepareStatement(select)) {
+            prSt.setInt(1, userId);
+
+            try (ResultSet resultSet = prSt.executeQuery()) {
+                if (resultSet.next()) {
+                    // Запись найдена
+                    return true;
+                } else {
+                    // Запись не найдена
+                    return false;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Обработка исключений, если необходимо
+            return false; // В случае ошибки, также можно вернуть 0 или другое значение по умолчанию
+        }
     }
     public void refreshBooksId() {
         // Обнуляем счетчик
@@ -238,7 +306,39 @@ public class DataBaseHandler extends Configs {
             return false;
         }
     }
+    public int getCountFromUsers(){
+        ResultSet resSet = null;
+        String select = "SELECT COUNT(*) FROM users";
 
+        try (PreparedStatement prSt = getDbConnection().prepareStatement(select)) {
+            resSet = prSt.executeQuery();
+
+            // Check if there are results
+            if (resSet.next()) {
+                // Get the value from the first column (count)
+                int result = resSet.getInt(1);
+                return result;
+            } else {
+                // Handle the case where there are no results
+                System.out.println("No results found.");
+                return -1;  // Or any other appropriate value
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+            // Handle the exception appropriately, log or rethrow
+            return -1;  // Or any other appropriate value
+        } finally {
+            // Close the ResultSet in the finally block to ensure it's always closed
+            if (resSet != null) {
+                try {
+                    resSet.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    // Handle the exception appropriately, log or rethrow
+                }
+            }
+        }
+    }
 
 
 }

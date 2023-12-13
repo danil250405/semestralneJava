@@ -6,6 +6,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
@@ -18,12 +19,12 @@
                         <Font size="15.0" />
                     </font>
                 </Label>
-                <TableView fx:id="fullTable" prefHeight="206.0" prefWidth="707.0">
+                <TableView fx:id="fullTable" prefHeight="206.0" prefWidth="700.0" styleClass="fullTable" stylesheets="@Style.css">
                     <columns>
-                        <TableColumn fx:id="columnIdBook" prefWidth="51.19998013973236" text="Id" />
-                        <TableColumn fx:id="columnNameBook" prefWidth="271.9999771118164" text="Name" />
-                        <TableColumn fx:id="columnAuthorBook" prefWidth="257.6000061035156" text="Author" />
-                        <TableColumn fx:id="columnYearBook" prefWidth="116.800048828125" text="Year of issue" />
+                        <TableColumn fx:id="columnIdBook" prefWidth="51.19998013973236" styleClass="col1" text="Id" />
+                        <TableColumn fx:id="columnNameBook" prefWidth="271.9999771118164" styleClass="col2" text="Name" />
+                        <TableColumn fx:id="columnAuthorBook" prefWidth="257.6000061035156" styleClass="col1" text="Author" />
+                        <TableColumn fx:id="columnYearBook" prefWidth="116.0" styleClass="col2" text="Year of issue" />
                     </columns>
                 </TableView>
                 <Label layoutX="46.0" layoutY="243.0" text="Enter book id which you want">
@@ -49,5 +50,6 @@
             <SVGPath fx:id="imageButtonHomeSvg" content="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" layoutX="-93.0" layoutY="14.0" styleClass="btnicon" />
          </children>
       </AnchorPane>
+      <Pane layoutY="103.0" prefHeight="10.0" prefWidth="700.0" style="-fx-background-color: #2E3348;" />
     </children>
 </AnchorPane>
